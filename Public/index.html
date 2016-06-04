@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		Vincent's <strong>Test</strong> Webpage
+	</head>
+	<body>
+		<p>
+			This is an awesome webpage <em> because </em>...
+			<ul>
+				<li> Vince is awesome </li>
+				<li> Peter is awesome </li>
+				<li> Aneesh is awesome for dragging his balls across 1 thousand miles of broken shards of glass </li>
+			</ul>
+			<form>
+				<fieldset>
+					<legend>Complete this form:</legend>
+					<input type="text" placeholder= "First Name" name="firstname" id="firstName"><br>
+					<input type="text" placeholder="Last Name"  name="lastname" id="lastName"><br>
+					<button  onclick="printSubmittedText()">Submit</button>
+				</fieldset>
+			</form>
+		</p>
+		<script>
+		function printSubmittedText() {
+			var order = document.getElementById("firstName").value;
+			var orderTwo = document.getElementById("lastName").value;
+			var orderThree = order + " " + orderTwo;
+			document.getElementById("orderThree").innerHTML = orderThree;
+		}
+		</script>
+		<p id="orderThree"></p>
+	</body>
+</html>
