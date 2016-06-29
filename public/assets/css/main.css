@@ -1,3 +1,4 @@
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -40,8 +41,24 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
-	}
+    }
 
+.hideme {
+    opacity: 0;
+}
+.come-in {
+    
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
 body {
     background: #ffffff;
 }
@@ -55,54 +72,192 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-ms-transition: none !important;
 			transition: none !important;
 }
-h2 {
-    font-size: 32px;
-}
+#team {
 
-#about {
-	float: right;
+    float: right;
     background-color:transparent;
-    border: 1px solid black;
     height:42px;
     line-height: 42px;
     width: 112px;
     text-decoration: none;
     color: black;
-    letter-spacing: 0em
-    font-family: "Avenir Next";
+    letter-spacing: 0em;
+    font-family: "EncodeSans-SemiBold";
+    font-size: 18pt;
     position: relative;
     
 }
+
+#team a {
+    text-decoration: none;
+    color:black;
+
+}
+
+#about {
+
+	float: right;
+    background-color:transparent;
+    height:42px;
+    line-height: 42px;
+    width: 112px;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0em;
+    font-family: "EncodeSans-SemiBold";
+    font-weight: bold;
+    position: relative; 
+    font-size: 18pt;
+}
+
 #about a {
     text-decoration: none;
     color:black;
 }
 
 #header {
-    padding: 21em 0 21em 0;
-    background-attachment: fixed,fixed,fixed;
-    background-image:url(../../pictures/Header%20image.jpg);
+    padding: 24em 0 24em 0;
+    text-align: left;  
+    /* background-attachment: fixed,fixed,fixed; */
+    /*background-image:url(../../pictures/Header%20image.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-    text-align: center;
-    color:white;    
+  background-size: cover;*/   
+}
+
+#header h3 {
+    float: left;
+    position: relative;
+    font-weight: bold;
+    font-size: 44pt;
     font-family:"Avenir Next";
-    font-weight: 500;
-    
+    line-height: 64pt;
+    bottom: 130px;
+    right: 200px;
 }
 
-#header p {
-    padding: 1em 0 1em 0;
-}
 #header h2 {
-    font-family: "Eurostile";
-    letter-spacing: 0.2em;
-    
 
+    float: left;
+    position: relative;
+    font-family: "Avenir Next";
+    letter-spacing: 0.2em;
+    font-family: "EncodeSans-SemiBold";
+    font-size: 32pt;
+    bottom: 350px;
+}
+#header h1 {
+    position: absolute;
+    left: 50%;
+    top: 90%;
 }
 #dataStart {
+
     text-align: center;
-    padding: 9em 0 9em 0;
+    background-color: #253546;
+    padding: 24em 0 24em 0;
+     font-family:"Avenir Next";
+}
+#whyStart { 
+
+    background-color: #19B5FE;
+    padding: 24em 0 24em 0;
+}
+#whyStart h3 {
+
+    float: left;
+    position:relative;
+    bottom: 108px;
+    left: 200px;
+    z-index: 0
+}
+#whyStart h2 {
+
+    float: right;
+    position: relative;
+    right: 350px;
+    bottom: 200px;
+    text-align: left;
+    color: white;
+    font-size: 28pt;
+    font-weight: bold;
+    font-family:"Avenir Next";
+    z-index: 1;
+    
+}
+#whyStart h1 {
+
+    position: relative;
+    left: 104px;
+    bottom: 85px;
+    float:right;
+    text-align: left;
+    line-height: 60px;
+    color: white;
+    font-size: 36pt;
+    font-weight: bold;
+    font-family: "Avenir Next";
+    z-index: 1;
+} 
+#whyStart h1 span {
+    color:black;
+}
+#whyStart p {
+
+    position: relative;
+    right: 226px;
+    bottom: 30px;
+    text-align: left;
+    line-height: 45px;
+    float:right;
+    color: white;
+    font-size: 20pt;
+    font-weight: 500;
+     font-family:"Avenir Next";
+    z-index: 1;
+} 
+#How {
+    
+
+    background-color: white;
+    padding: 24em 0 24em 0; 
+    font-family:"Avenir Next";
+
+    
+}
+#How h3 {
+
+    position: relative;
+    bottom: 225px;
+    float: right;
+
+}
+#How h2 {
+
+    float: left;
+    position: relative;
+    left: 205px;
+    bottom: 250px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 28pt;
+
+}
+#How p {
+
+    float: left;
+    position: relative;
+    right: 53px;
+    bottom: 130px;
+    font-size: 20pt;
+    font-weight: 500;
+    line-height: 45px;
+
+}
+#Contact {
+
+    background-color: darkgray;
+    padding: 15em 0 15em 0;
+    font-family:"Avenir Next";
 }
