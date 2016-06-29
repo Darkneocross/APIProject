@@ -15,7 +15,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
         }
         , success: function (result) {
             console.log(JSON.stringify(result));
-            var json = JSON.parse(result);
+            /*var json = JSON.parse(result);
             var data = [];
             for (var i = 0; i < 20; i++) {
                 if (typeof json.prices[i] != typeof undefined) {
@@ -24,7 +24,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             }
             if (typeof data != typeof undefined) {
                 console.log(data);
-            }
+            }*/
         }
     });
 }
