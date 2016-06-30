@@ -41,3 +41,16 @@ function getEstimatesForUserLocation(latitude, longitude) {
         }
     });
 }
+function putDataInDataBase {
+    var config = {
+        apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
+        , authDomain: "uberlytics-project.firebaseapp.com"
+        , databaseURL: "https://uberlytics-project.firebaseio.com"
+        , storageBucket: "uberlytics-project.appspot.com"
+    , };
+    firebase.initializeApp(config);
+    var Fdatabase = firebase.database();
+    Fdatabase.ref('Monday').set({
+        value: "2.0",
+    });
+}

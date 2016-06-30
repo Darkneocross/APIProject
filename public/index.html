@@ -52,7 +52,7 @@
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 <script>
     // Initialize Firebase
-    var config = {
+   /* var config = {
         apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
         , authDomain: "uberlytics-project.firebaseapp.com"
         , databaseURL: "https://uberlytics-project.firebaseio.com"
@@ -60,6 +60,17 @@
     , };
     firebase.initializeApp(config);
     var Fdatabase = firebase.database();
+    Fdatabase.ref('Monday').set({
+        value: "2.0",
+    });*/
+    //Read and Write Data
+    //var myFirebaseRef = new Firebase("http://uberlytics-project.firebaseio.com/");
+    //var myFirebaseRef.child("Monday");
+    /*myFirebaseRef.set({
+        surgePrices: {
+            value: "2.0";
+        }
+    })*/
 </script>
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
