@@ -8,12 +8,15 @@ var endLatitude = "40.741549";
 var endLongitude = "-73.988991";
 var timer;
 
-if (typeof timer === typeof undefined) {
-    timer = setInterval(function () {
+$( document ).ready(function() {
+    console.log( "ready!" );
+    if (typeof timer === typeof undefined) {
+        timer = setInterval(function () {
+            getEstimatesForUserLocation(startLatitude, startLongitude);
+        }, 60000);
         getEstimatesForUserLocation(startLatitude, startLongitude);
-    }, 60000);
-    getEstimatesForUserLocation(startLatitude, startLongitude);
 }
+});
 
 function getEstimatesForUserLocation(latitude, longitude) {
     $.ajax({
@@ -41,7 +44,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
         }
     });
 }
-function putDataInDataBase {
+/*function putDataInDataBase {
     var config = {
         apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
         , authDomain: "uberlytics-project.firebaseapp.com"
@@ -53,4 +56,4 @@ function putDataInDataBase {
     Fdatabase.ref('Monday').set({
         value: "2.0",
     });
-}
+}*/
