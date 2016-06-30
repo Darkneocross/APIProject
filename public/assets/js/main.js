@@ -19,6 +19,30 @@ $(document).ready(function() {
         });
 
     });
+    $('.hidemetwo').each(function(i){
+            
+            var top_of_object = $(this).offset().top; 
+            var bottom_of_window = $(window).scrollTop() +      $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > top_of_object ){
+                $(this).animate({'opacity':'1'},1000);
+                
+            }
+            
+        });
+    $("#nav").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#dataStart").offset().top
+                }, 500);
+    });
+    $("#about").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#Contact").offset().top
+                }, 500);
+    });
+        
+
 });
 (function($) {
   $.fn.visible = function(partial) {
