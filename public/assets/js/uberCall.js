@@ -8,6 +8,7 @@ var endLatitude = "40.741549";
 var endLongitude = "-73.988991";
 var timer;
 
+
 $( document ).ready(function() {
     console.log( "ready!" );
     if (typeof timer === typeof undefined) {
@@ -30,7 +31,21 @@ function getEstimatesForUserLocation(latitude, longitude) {
         },
         success: function (result) {
             console.log(serverTokenString);
-            console.log(JSON.stringify(result));
+           // console.log(JSON.stringify(result, null, 2));
+            var test = jQuery.parseJSON(JSON.stringify(result));
+            console.log(test);
+             var config = {
+                apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
+                , authDomain: "uberlytics-project.firebaseapp.com"
+                , databaseURL: "https://uberlytics-project.firebaseio.com"
+                , storageBucket: "uberlytics-project.appspot.com"
+            , };
+            firebase.initializeApp(config);
+            var Fdatabase = firebase.database();
+            Fdatabase.ref('Monday').set({
+                value: test[0].surge_multiplier ,
+            });
+            //console.log(JSON.parse(result));
             /*var json = JSON.parse(result);
             var data = [];
             for (var i = 0; i < 20; i++) {
@@ -44,7 +59,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
         }
     });
 }
-/*function putDataInDataBase {
+/*function putDataInDataBase() {
     var config = {
         apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
         , authDomain: "uberlytics-project.firebaseapp.com"
