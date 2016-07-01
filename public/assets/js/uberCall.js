@@ -34,6 +34,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
            // console.log(JSON.stringify(result, null, 2));
             var test = jQuery.parseJSON(JSON.stringify(result));
             console.log(test);
+            console.log(test.prices[0].surge_multiplier)
              var config = {
                 apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
                 , authDomain: "uberlytics-project.firebaseapp.com"
@@ -43,7 +44,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             firebase.initializeApp(config);
             var Fdatabase = firebase.database();
             Fdatabase.ref('Monday').set({
-                value: test[0].surge_multiplier ,
+                value: test.prices[0].surge_multiplier ,
             });
             //console.log(JSON.parse(result));
             /*var json = JSON.parse(result);
