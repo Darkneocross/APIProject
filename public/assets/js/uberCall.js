@@ -17,6 +17,10 @@ weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
 var n = weekday[d.getDay()];
+var t = d.getHours();
+var min = d.getMinutes();
+var time = t + ':' + d.getMinutes();
+console.log(time);
 var timer;
 
 
@@ -45,7 +49,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
            // console.log(JSON.stringify(result, null, 2));
             var test = jQuery.parseJSON(JSON.stringify(result));
             console.log(test);
-            console.log(test.prices[0].surge_multiplier)
+            //console.log(test.prices[0].surge_multiplier)
              var config = {
                 apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
                 , authDomain: "uberlytics-project.firebaseapp.com"
@@ -54,9 +58,33 @@ function getEstimatesForUserLocation(latitude, longitude) {
             , };
             firebase.initializeApp(config);
             var Fdatabase = firebase.database();
-            Fdatabase.ref(n).set({
-                value: test.prices[0].surge_multiplier ,
-            });
+            if(min % 5 == 0 ) {
+                Fdatabase.ref(n + '/' + time + '/' + test.prices[0].display_name).set({
+                    surgePrice: test.prices[0].surge_multiplier
+                });
+                Fdatabase.ref(n + '/' + time + '/' + test.prices[1].display_name).set({
+                    surgePrice: test.prices[1].surge_multiplier
+                });
+                Fdatabase.ref(n + '/' + time + '/' +    test.prices[2].display_name).set({
+                    surgePrice: test.prices[2].surge_multiplier
+                });
+                Fdatabase.ref(n + '/' + time + '/' + test.prices[3].display_name).set({
+                    surgePrice: test.prices[3].surge_multiplier
+                });
+                Fdatabase.ref(n + '/' + time + '/' + test.prices[4].display_name).set({
+                    surgePrice: test.prices[4].surge_multiplier
+                });
+                Fdatabase.ref(n + '/' + time + '/' + test.prices[5].display_name).set({
+                    surgePrice: test.prices[5].surge_multiplier
+                });
+                Fdatabase.ref(n + '/' + time + '/' + test.prices[6].display_name).set({
+                    surgePrice: test.prices[6].surge_multiplier
+                });
+                Fdatabase.ref(n + '/' + time + '/' + test.prices[7].display_name).set({
+                    surgePrice: test.prices[7].surge_multiplier
+                });
+            }
+            //console.log(test.prices[0].display_name);
             //console.log(JSON.parse(result));
             /*var json = JSON.parse(result);
             var data = [];
