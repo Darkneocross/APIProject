@@ -22,6 +22,13 @@ var min = d.getMinutes();
 var time = t + ':' + d.getMinutes();
 console.log(time);
 var timer;
+var config = {
+                apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
+                , authDomain: "uberlytics-project.firebaseapp.com"
+                , databaseURL: "https://uberlytics-project.firebaseio.com"
+                , storageBucket: "uberlytics-project.appspot.com"
+            , };
+            firebase.initializeApp(config);
 
 
 $( document ).ready(function() {
@@ -50,15 +57,8 @@ function getEstimatesForUserLocation(latitude, longitude) {
             var test = jQuery.parseJSON(JSON.stringify(result));
             console.log(test);
             //console.log(test.prices[0].surge_multiplier)
-             var config = {
-                apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
-                , authDomain: "uberlytics-project.firebaseapp.com"
-                , databaseURL: "https://uberlytics-project.firebaseio.com"
-                , storageBucket: "uberlytics-project.appspot.com"
-            , };
-            firebase.initializeApp(config);
             var Fdatabase = firebase.database();
-            if(min % 5 == 0 ) {
+            //if(min % 5 == 0 ) {
                 Fdatabase.ref(n + '/' + time + '/' + test.prices[0].display_name).set({
                     surgePrice: test.prices[0].surge_multiplier
                 });
@@ -83,7 +83,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
                 Fdatabase.ref(n + '/' + time + '/' + test.prices[7].display_name).set({
                     surgePrice: test.prices[7].surge_multiplier
                 });
-            }
+            //}
             //console.log(test.prices[0].display_name);
             //console.log(JSON.parse(result));
             /*var json = JSON.parse(result);
