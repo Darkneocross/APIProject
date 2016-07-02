@@ -6,6 +6,17 @@ var startLatitude = "40.741549";
 var startLongitude = "-73.988991";
 var endLatitude = "40.741549";
 var endLongitude = "-73.988991";
+var d = new Date();
+var weekday = new Array(7);
+weekday[0]=  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var n = weekday[d.getDay()];
 var timer;
 
 
@@ -43,7 +54,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             , };
             firebase.initializeApp(config);
             var Fdatabase = firebase.database();
-            Fdatabase.ref('Monday').set({
+            Fdatabase.ref(n).set({
                 value: test.prices[0].surge_multiplier ,
             });
             //console.log(JSON.parse(result));
