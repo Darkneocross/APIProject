@@ -19,7 +19,13 @@ weekday[6] = "Saturday";
 var n = weekday[d.getDay()];
 var t = d.getHours();
 var min = d.getMinutes();
-var time = t + ':' + d.getMinutes();
+var time;
+if(min < 10) {
+    time = t + ':0' + min;
+} else {
+    time = t + ':' + min;
+}
+//time = t + ':' + d.getMinutes();
 console.log(time);
 var timer;
 var config = {
