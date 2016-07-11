@@ -2,6 +2,17 @@ var uberClientId = "5uROnzkiqJnVpj6BWRBUmP1l00oaRYe5";
 var uberServerToken = "5RKv2XQEACjqgIkbUslzevHw9wV6Ou6zuI88giiE";
 var serverTokenString = "Token " + uberServerToken;
 
+
+var startAddress;
+var endAddress;
+function searchCoordinates() {
+    startAddress = document.getElementById("startAddress").value;
+    endAddress = document.getElementById("endAddress").value;
+    console.log(startAddress);
+    console.log(endAddress);
+    //var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyC77ENHFU4GW1hGE3UXfvGVwj1kPoe3MHA";
+}
+
 var startLatitude = "40.741549";
 var startLongitude = "-73.988991";
 var endLatitude = "40.741549";

@@ -19,6 +19,17 @@
                         <div id = "uberlytics">
                         <h2>UBERLYTICS</h2>
                             <h3>A website that<br> puts you in the <br> driver seat.</h3>
+                            <!-- Edit this part later for Styling -->
+                            <form>
+                                Start Address:<br>
+                                <input type="text" id="startAddress"><br>
+                                End Address:<br>
+                                <input type="text" id="endAddress">
+                                <br>
+                                <button type="button" onclick="searchCoordinates()">Search!</button>
+                            </form>
+                            
+                            
                         </div>
             <h1 id ="nav" class = "hidemetwo"><a href ="#dataStart"><img src = "pictures/Fill%20454.png"></a></h1>
             </section>
@@ -46,7 +57,30 @@
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-<script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed in=true&libraries=places&key=AIzaSyBWV204gJuUHLeXo40lnld9JVfMJydZ8PI"></script>
+
+
+   <script type="text/javascript">
+    google.maps.event.addDomListener(window, 'load', intilize);
+    function intilize() {
+        var autocomplete = new google.maps.places.Autocomplete(document.getElementById("txtautocomplete"));
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+
+        var place = autocomplete.getPlace();
+        var location = "Address: " + place.formatted_address + "<br/>";
+        location += "Latitude: " + place.geometry.location.lat() + "<br/>";
+        location += "Longitude: " + place.geometry.location.lng();
+        document.getElementById('lblresult').innerHTML = location
+        });
+
+    };
+
+    </script>
+
+    <span>location:</span><input type="text" id="txtautocomplete" style="width:200px" placeholder="enter the adress"/>
+    <label id="lblresult"></label>
+    <script>
     // Initialize Firebase
    /* var config = {
         apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
