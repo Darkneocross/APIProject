@@ -5,19 +5,34 @@ var serverTokenString = "Token " + uberServerToken;
 
 var startAddress;
 var endAddress;
-function searchCoordinates() {
+/*function searchCoordinates() {
     startAddress = document.getElementById("startAddress").value;
     endAddress = document.getElementById("endAddress").value;
     console.log(startAddress);
     console.log(endAddress);
     //var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyC77ENHFU4GW1hGE3UXfvGVwj1kPoe3MHA";
-}
+}*/
+google.maps.event.addDomListener(window, 'load', intilize);
+    function intilize() {
+        var autocomplete = new google.maps.places.Autocomplete(document.getElementById("txtautocomplete"));
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+
+        var place = autocomplete.getPlace();
+        var location = new Array(3);
+        location[0] = place.formatted_address;
+        location[1] = place.geometry.location.lat();
+        location[2] = place.geometry.location.lng();
+        //document.getElementById('lblresult').innerHTML = location;
+        console.log(location);
+        });
+    };
 
 var startLatitude = "40.741549";
 var startLongitude = "-73.988991";
 var endLatitude = "40.741549";
 var endLongitude = "-73.988991";
-var d = new Date();
+/*var d = new Date();
 var weekday = new Array(7);
 weekday[0]=  "Sunday";
 weekday[1] = "Monday";
@@ -37,7 +52,7 @@ if(min < 10) {
     time = t + ':' + min;
 }
 //time = t + ':' + d.getMinutes();
-console.log(time);
+console.log(time);*/
 var timer;
 var config = {
                 apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
@@ -60,6 +75,7 @@ $( document ).ready(function() {
 
 function getEstimatesForUserLocation(latitude, longitude) {
     $.ajax({
+        
         /*url: "https://api.uber.com/v1/estimates/price?start_latitude=" + startLatitude + "&start_longitude=" + startLongitude + "&end_latitude=" + endLatitude + "&end_longitude=" + endLongitude + "",*/
         url: "https://api.uber.com/v1/estimates/price?start_latitude=40.741549&start_longitude=-73.988991&end_latitude=40.741549&end_longitude=-73.988991",
         // REMINDER:
@@ -69,6 +85,25 @@ function getEstimatesForUserLocation(latitude, longitude) {
             'Authorization': serverTokenString
         },
         success: function (result) {
+            var d = new Date();
+            var weekday = new Array(7);
+            weekday[0]=  "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            var n = weekday[d.getDay()];
+            var t = d.getHours();
+            var min = d.getMinutes();
+            var time;
+            if(min < 10) {
+                time = t + ':0' + min;
+            } else {
+                time = t + ':' + min;
+            }
             console.log(serverTokenString);
            // console.log(JSON.stringify(result, null, 2));
             var test = jQuery.parseJSON(JSON.stringify(result));
