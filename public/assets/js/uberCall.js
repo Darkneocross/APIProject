@@ -1,7 +1,8 @@
 var uberClientId = "5uROnzkiqJnVpj6BWRBUmP1l00oaRYe5";
 var uberServerToken = "5RKv2XQEACjqgIkbUslzevHw9wV6Ou6zuI88giiE";
 var serverTokenString = "Token " + uberServerToken;
-
+var fifthAvenueLat = [40.746577, 40.747164,40.747798,40.748448,40.749144,40.749739,40.750389,40.750992,40.751618,40.75224,40.752835,40.753516, 40.754189, 40.754807, 40.755465, 40.75606, 40.75667, 40.757289, 40.757939, 40.758573, 40.759203, 40.759794, 40.760419, 40.761063, 40.761673, 40.762319, 40.76301];
+var fifthAvenueLong = [-73.985998, -73.985502, -73.985058, -73.984562, -73.984087, -73.983632, -73.982774, -73.981862, -73.981387, -73.980932, -73.980436, -73.979961, -73.979486, -73.979052, -73.978576, -73.978101, -73.977646, -73.977212, -73.976742, -73.976295, -73.975376, -73.974917, -73.974477, -73.973978];
 
 var startAddress;
 var endAddress;
@@ -53,6 +54,7 @@ if(min < 10) {
 }
 //time = t + ':' + d.getMinutes();
 console.log(time);*/
+var count = 0;
 var timer;
 var config = {
                 apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
@@ -75,7 +77,7 @@ $( document ).ready(function() {
 
 function getEstimatesForUserLocation(latitude, longitude) {
     $.ajax({
-        
+
         /*url: "https://api.uber.com/v1/estimates/price?start_latitude=" + startLatitude + "&start_longitude=" + startLongitude + "&end_latitude=" + endLatitude + "&end_longitude=" + endLongitude + "",*/
         url: "https://api.uber.com/v1/estimates/price?start_latitude=40.741549&start_longitude=-73.988991&end_latitude=40.741549&end_longitude=-73.988991",
         // REMINDER:
@@ -85,6 +87,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             'Authorization': serverTokenString
         },
         success: function (result) {
+            
             var d = new Date();
             var weekday = new Array(7);
             weekday[0]=  "Sunday";
@@ -110,7 +113,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             console.log(test);
             //console.log(test.prices[0].surge_multiplier)
             var Fdatabase = firebase.database();
-            //if(min % 5 == 0 ) {
+            if(min % 5 == 0 ) {
                 Fdatabase.ref(n + '/' + time + '/' + test.prices[0].display_name).set({
                     surgePrice: test.prices[0].surge_multiplier
                 });
@@ -135,7 +138,13 @@ function getEstimatesForUserLocation(latitude, longitude) {
                 Fdatabase.ref(n + '/' + time + '/' + test.prices[7].display_name).set({
                     surgePrice: test.prices[7].surge_multiplier
                 });
-            //}
+                Fdatabase.ref(n + '/' + time + '/Counter').set({
+                    counter: count
+                });
+                Fdatabase.ref(n + '/' + time + '/Average').set({
+                     average: "temp value for now"
+                });
+            }
             //console.log(test.prices[0].display_name);
             //console.log(JSON.parse(result));
             /*var json = JSON.parse(result);
