@@ -6,13 +6,7 @@ var fifthAvenueLong = [-73.985998, -73.985502, -73.985058, -73.984562, -73.98408
 
 var startAddress;
 var endAddress;
-/*function searchCoordinates() {
-    startAddress = document.getElementById("startAddress").value;
-    endAddress = document.getElementById("endAddress").value;
-    console.log(startAddress);
-    console.log(endAddress);
-    //var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyC77ENHFU4GW1hGE3UXfvGVwj1kPoe3MHA";
-}*/
+
 google.maps.event.addDomListener(window, 'load', intilize);
     function intilize() {
         var autocomplete = new google.maps.places.Autocomplete(document.getElementById("txtautocomplete"));
@@ -33,27 +27,6 @@ var startLatitude = "40.741549";
 var startLongitude = "-73.988991";
 var endLatitude = "40.741549";
 var endLongitude = "-73.988991";
-/*var d = new Date();
-var weekday = new Array(7);
-weekday[0]=  "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
-
-var n = weekday[d.getDay()];
-var t = d.getHours();
-var min = d.getMinutes();
-var time;
-if(min < 10) {
-    time = t + ':0' + min;
-} else {
-    time = t + ':' + min;
-}
-//time = t + ':' + d.getMinutes();
-console.log(time);*/
 var count = 0;
 var timer;
 var config = {
@@ -114,6 +87,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             //console.log(test.prices[0].surge_multiplier)
             var Fdatabase = firebase.database();
             if(min % 5 == 0 ) {
+                //Adding Data
                 Fdatabase.ref(n + '/' + time + '/' + test.prices[0].display_name).set({
                     surgePrice: test.prices[0].surge_multiplier
                 });
@@ -144,7 +118,18 @@ function getEstimatesForUserLocation(latitude, longitude) {
                 Fdatabase.ref(n + '/' + time + '/Average').set({
                      average: "temp value for now"
                 });
+                
+                //Retrieving Data
+                var ref = firebase.database().ref(n + '/' + time);
+                ref.once("value")
+                    .then(function(snapshot) {
+                        var a = snapshot.child(test);
+                        console.log(a);
+            });
             }
+            
+            
+            
             //console.log(test.prices[0].display_name);
             //console.log(JSON.parse(result));
             /*var json = JSON.parse(result);
