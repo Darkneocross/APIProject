@@ -86,7 +86,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             console.log(test);
             //console.log(test.prices[0].surge_multiplier)
             var Fdatabase = firebase.database();
-            if(min % 5 == 0 ) {
+            //if(min % 5 == 0 ) {
                 //Adding Data
                 Fdatabase.ref(n + '/' + time + '/' + test.prices[0].display_name).set({
                     surgePrice: test.prices[0].surge_multiplier
@@ -123,10 +123,11 @@ function getEstimatesForUserLocation(latitude, longitude) {
                 var ref = firebase.database().ref(n + '/' + time);
                 ref.once("value")
                     .then(function(snapshot) {
-                        var a = snapshot.child(test);
-                        console.log(a);
+                        //var a = snapshot.child(test.prices[0].surge_multiplier);
+                        var a = snapshot.val();
+                        console.log(a.Average.average);
             });
-            }
+           // }
             
             
             
