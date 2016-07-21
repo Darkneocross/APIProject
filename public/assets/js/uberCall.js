@@ -126,7 +126,13 @@ function getEstimatesForUserLocation(latitude, longitude) {
                         //var a = snapshot.child(test.prices[0].surge_multiplier);
                         var a = snapshot.val();
                         console.log(a.Average.average);
-            });
+                        var b = a.Counter.counter;
+                        b = b + 1;
+                        console.log(b);
+                });
+                Fdatabase.ref(n + '/' + time + '/Counter').set({
+                    counter: count
+                });
            // }
             
             
