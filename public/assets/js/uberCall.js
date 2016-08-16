@@ -66,8 +66,67 @@ var longCoordinates = [
 /*ali way */      [0,          -73.988275, -73.991075, -73.993928, -73.996732, -73.988006],
 /*broadway*/      [0,          -73.988173, -73.98568,  0,          0,          0         ]
 ];
+
+var streetOneNames = [
+    "31 street",
+    "32 street",
+    "33 street",
+    "34 street",
+    "35 street",
+    "36 street",
+    "37 street",
+    "38 street",
+    "39 street",
+    "40 street",
+    "41 street",
+    "42 street",
+    "43 street",
+    "44 street",
+    "45 street",
+    "46 street",
+    "47 street",
+    "48 street",
+    "49 street",
+    "50 street",
+    "51 street",
+    "52 street",
+    "53 street",
+    "54 street",
+    "55 street",
+    "56 street",
+    "57 street",
+    "ali way",
+    "broadway"
+];
+
+var streetTwoNames = [
+    "5th",
+    "6th",
+    "7th",
+    "8th",
+    "9th",
+    "broadway"
+];
 var startAddress;
 var endAddress;
+
+function getLat(topStreet) {
+    for (var i = 0; i < streetOneNames.length; i++) {
+        if (topStreet === streetOneNames[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+function getLong(botStreet) {
+    for (var i = 0; i < streetTwoNames.length; i++) {
+        if (botStreet === streetTwoNames[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
 
 google.maps.event.addDomListener(window, 'load', intilize);
     function intilize() {
