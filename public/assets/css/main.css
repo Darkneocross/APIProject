@@ -72,12 +72,6 @@ body {
     background-repeat: no-repeat;
    
 }
-#dataStart div {
-    padding-top: 367px;
-    padding-left: 25%;
-    width: 50%;
-    height: 20%;
-}
 #why {
     height: 518px;
     background-color: #19B5FE;
@@ -232,13 +226,672 @@ body {
     }
 }
 @media screen and (max-width: 1160px) {
-    article {
-        width: 100%;
-    }
     * {
-        font-size: 12pt;
-        color:blue;
-    }
+    margin: 0;
+    border: 0;
+    padding: 0;
+    //border: black solid 2px;
+}
+body {
+    background: #FFFFFF;
+    font: 14px/20px;
+    font-family: "Avenir Next";
+    margin: 0;
+    color: #000000;
+}
+#header {
+    height: 734px;
+    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+#logo {
+    padding: 22px 0px 0px 90px;
+}
+#header nav {
+    font-family: "EncodeSans-SemiBold";
+    float: right;
+    padding: 41px 90px 0px 0px;
+}
+#header nav li {
+    display: inline-block;
+    margin-left: 70px;
+    
+    
+}
+#header nav li a {
+    text-decoration: none;
+    color: #000000;
+}
+#header section {
+    width: 50%;
+    text-align: left;
+
+}
+#header section h2 {
+    padding: 130px 0 0 130px;
+    font-size: 40pt;
+    font-weight: 700;
+}
+#header section p {
+    padding: 55px 0 80px 130px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+#header h1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    
+    left: 50%;
+    margin: 0 0 0 -0.75em;
+    position: absolute;
+}
+#dataStart {
+    color: #FFFFFF;
+    height: 734px;
+    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+   
+}
+#why {
+    height: 518px;
+    background-color: #19B5FE;
+}
+#why article {
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    padding-top: 68px;
+}
+#why aside {
+    float: right;
+     margin: 0 auto;
+    width: 49%;
+    height: auto;
+    color: #FFFFFF;
+}
+#why aside h2 {
+    padding: 43px 0px 25px 0;
+}
+#why aside h1 {
+    font-size: 28pt;
+    padding-bottom: 45px;
+    padding-left: 95px;
+}
+#why aside p {
+    font-size: 14pt;
+    padding-left: 95px;
+    color: #E1F5FF;
+}
+#why aside h1 span {
+    color:#000000;
+}
+
+#How {
+    height: 518px;
+    background-color: #FFFFFF;
+}
+#How article {
+    border: transparent solid 1px;
+    float: right;
+    margin: 0 auto;
+    width: 49%;
+    height: auto;
+    text-align: center;
+    padding: 45px 0 0 0;
+    
+}
+#How aside {
+    border: transparent solid 1px;
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    //border: black solid 2px;
+
+}
+#How aside h2 {
+    padding: 45px 0 25px 83px;
+}
+#How aside h1{
+    padding:0 0 35px 155px;
+    font-size: 22pt;
+    
+}
+#How aside p {
+    padding-left: 155px;
+    font-size: 12pt;
+    font-weight: 500;
+}
+#Contact {
+    height: 518px;
+    background: url(../../pictures/background%20team.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#Contact h2{
+
+    padding-top: 200px;
+    text-align: center;
+    font-weight: 500;    
+    font-size: 16pt;
+}
+#Contact p {
+    padding-top: 65px;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+#Contact p span {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: black solid 3px;
+    color: #000000;
+}
+#ContactTwo {
+    height: 222px;
+    background-color: #37474F;
+    color: #FFFFFF;
+}
+#ContactTwo h2 {
+    padding: 80px 0 60px 0;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+}
+#ContactTwo h2 a {
+    color: #FFFFFF;
+    font-weight:lighter;
+}
+#ContactTwo article {
+    float: left;
+    padding: 0 0 0 150px;
+    width: 50%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    
+}
+#ContactTwo article li {
+    display: inline-block;
+    margin-left: 20px;
+}
+#ContactTwo article li a {
+
+    text-decoration: none;
+    color: #D3D7D8;
+}
+#ContactTwo aside {
+    padding: 0 150px 0 0;
+    float: right;
+    text-align: right;
+    width: 25%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    text-decoration: none;
+}
+#ContactTwo aside a {
+    color: #D3D7D8;
+}
+    
+}
+@media screen and (max-width: 910px) {
+    * {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    //border: black solid 2px;
+}
+body {
+    background: #FFFFFF;
+    font: 14px/20px;
+    font-family: "Avenir Next";
+    margin: 0;
+    color: #000000;
+}
+#header {
+    height: 734px;
+    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+#logo {
+    padding: 22px 0px 0px 90px;
+}
+#header nav {
+    font-family: "EncodeSans-SemiBold";
+    float: right;
+    padding: 41px 90px 0px 0px;
+}
+#header nav li {
+    display: inline-block;
+    margin-left: 70px;
+    
+    
+}
+#header nav li a {
+    text-decoration: none;
+    color: #000000;
+}
+#header section {
+    width: 50%;
+    text-align: left;
+
+}
+#header section h2 {
+    padding: 130px 0 0 130px;
+    font-size: 40pt;
+    font-weight: 700;
+}
+#header section p {
+    padding: 55px 0 80px 130px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+#header h1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    
+    left: 50%;
+    margin: 0 0 0 -0.75em;
+    position: absolute;
+}
+#dataStart {
+    color: #FFFFFF;
+    height: 734px;
+    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+   
+}
+#why {
+    height: 518px;
+    background-color: #19B5FE;
+}
+#why article {
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    padding-top: 68px;
+}
+#why aside {
+    float: center;
+     margin: 0 auto;
+    width: 49%;
+    height: auto;
+    color: #FFFFFF;
+}
+#why aside h2 {
+    padding: 43px 0px 25px 0;
+}
+#why aside h1 {
+    font-size: 20pt;
+    padding-bottom: 45px;
+    padding-left: 95px;
+}
+#why aside p { 
+    font-size: 12pt;
+    padding-left: 95px;
+    color: #E1F5FF;
+}
+#why aside h1 span {
+    color:#000000;
+}
+
+#How {
+    height: 518px;
+    background-color: #FFFFFF;
+}
+#How article {
+    border: transparent solid 1px;
+    float: right;
+    margin: 0 auto;
+    width: 49%;
+    height: auto;
+    text-align: center;
+    padding: 45px 0 0 0;
+    
+}
+#How aside {
+    border: transparent solid 1px;
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    //border: black solid 2px;
+
+}
+#How aside h2 {
+    padding: 45px 0 25px 83px;
+}
+#How aside h1{
+    padding:0 0 35px 155px;
+    font-size: 18pt;
+    
+}
+#How aside p {
+    padding-left: 155px;
+    font-size: 12pt;
+    font-weight: 500;
+}
+#Contact {
+    height: 518px;
+    background: url(../../pictures/background%20team.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#Contact h2{
+
+    padding-top: 200px;
+    text-align: center;
+    font-weight: 500;    
+    font-size: 16pt;
+}
+#Contact p {
+    padding-top: 65px;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+#Contact p span {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: black solid 3px;
+    color: #000000;
+}
+#ContactTwo {
+    height: 222px;
+    background-color: #37474F;
+    color: #FFFFFF;
+}
+#ContactTwo h2 {
+    padding: 80px 0 60px 0;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+}
+#ContactTwo h2 a {
+    color: #FFFFFF;
+    font-weight:lighter;
+}
+#ContactTwo article {
+    float: left;
+    padding: 0 0 0 150px;
+    width: 50%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    
+}
+#ContactTwo article li {
+    display: inline-block;
+    margin-left: 20px;
+}
+#ContactTwo article li a {
+
+    text-decoration: none;
+    color: #D3D7D8;
+}
+#ContactTwo aside {
+    padding: 0 150px 0 0;
+    float: right;
+    text-align: right;
+    width: 25%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    text-decoration: none;
+}
+#ContactTwo aside a {
+    color: #D3D7D8;
+}
+    
+}
+@media screen and (max-width: 740px) {
+    * {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    //border: black solid 2px;
+}
+body {
+    background: #FFFFFF;
+    font: 14px/20px;
+    font-family: "Avenir Next";
+    margin: 0;
+    color: #000000;
+}
+#header {
+    height: 734px;
+    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+#logo {
+    padding: 22px 0px 0px 90px;
+}
+#header nav {
+    font-family: "EncodeSans-SemiBold";
+    float: right;
+    padding: 41px 90px 0px 0px;
+}
+#header nav li {
+    display: inline-block;
+    margin-left: 70px;
+    
+    
+}
+#header nav li a {
+    text-decoration: none;
+    color: #000000;
+}
+#header section {
+    width: 50%;
+    text-align: left;
+
+}
+#header section h2 {
+    padding: 130px 0 0 130px;
+    font-size: 40pt;
+    font-weight: 700;
+}
+#header section p {
+    padding: 55px 0 80px 130px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+#header h1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    
+    left: 50%;
+    margin: 0 0 0 -0.75em;
+    position: absolute;
+}
+#dataStart {
+    color: #FFFFFF;
+    height: 734px;
+    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+   
+}
+#why {
+    height: 1036px;
+    background-color: #19B5FE;
+}
+#why article {
+    float: center;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 68px;
+}
+#why aside {
+    //border: black solid 2px;
+
+    float: center;
+     margin: 0 auto;
+    width: 100%;
+    height: auto;
+    color: #FFFFFF;
+}
+#why aside h2 {
+    padding: 43px 0px 25px 83px;
+}
+#why aside h1 { ////////
+    font-size: 28pt;
+    padding-bottom: 45px;
+    padding-left: 183px;
+}
+#why aside p { ////////
+    font-size: 14pt;
+    padding-left: 183px;
+    color: #E1F5FF;
+}
+#why aside h1 span {
+    color:#000000;
+}
+
+#How {
+    height: 1036px;
+    background-color: #FFFFFF;
+}
+#How article {
+    border: transparent solid 1px;
+    float: right;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 45px 0 0 0;
+    
+}
+#How aside {
+    border: transparent solid 1px;
+    float: center;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    //border: black solid 2px;
+
+}
+#How aside h2 {
+    padding: 45px 0 25px 83px;
+}
+#How aside h1{
+    padding:0 0 35px 155px;
+    font-size: 28pt;
+    
+}
+#How aside p {
+    padding-left: 155px;
+    font-size: 14pt;
+    font-weight: 500;
+}
+#Contact {
+    height: 518px;
+    background: url(../../pictures/background%20team.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#Contact h2{
+
+    padding-top: 200px;
+    text-align: center;
+    font-weight: 500;    
+    font-size: 16pt;
+}
+#Contact p {
+    padding-top: 65px;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+#Contact p span {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: black solid 3px;
+    color: #000000;
+}
+#ContactTwo {
+    height: 222px;
+    background-color: #37474F;
+    color: #FFFFFF;
+}
+#ContactTwo h2 {
+    padding: 80px 0 60px 0;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+}
+#ContactTwo h2 a {
+    color: #FFFFFF;
+    font-weight:lighter;
+}
+#ContactTwo article {
+    float: left;
+    padding: 0 0 0 150px;
+    width: 50%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    
+}
+#ContactTwo article li {
+    display: inline-block;
+    margin-left: 20px;
+}
+#ContactTwo article li a {
+
+    text-decoration: none;
+    color: #D3D7D8;
+}
+#ContactTwo aside {
+    padding: 0 150px 0 0;
+    float: right;
+    text-align: right;
+    width: 25%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    text-decoration: none;
+}
+#ContactTwo aside a {
+    color: #D3D7D8;
+}
+    
 }
 
 /*------DON"T DElETE-----------*/

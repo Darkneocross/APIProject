@@ -5,7 +5,7 @@
 		<title>uberlytics</title>
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="/public/assets/css/main.css"/>
+        <link rel="stylesheet" href="/assets/css/main.css"/>
 </head>
     </head>
     <body>
@@ -32,7 +32,6 @@
                 <canvas id="myChart" width="20" height="20"></canvas>
             </div>
         </div>
-        <div class="clear"></div>
             <div id ="why">
                 <article class ="module hideme"><img src = "pictures/picture%20of%20surge.png"></article>
                 <aside>
@@ -61,8 +60,7 @@
                 <article>
                     <ul>
                     <li> Copyright © 2016</li>
-                        <li>All Rights Reserved</li>                                    
-                        <li><a href ="">Contact Us</a></li>
+                        <li>All Rights Reserved</li>                                     <li><a href ="">Contact Us</a></li>
                     </ul>
                 </article>
                 <aside><a href ="">Twitter</a>/<a href ="">Facebook</a></as>
@@ -83,9 +81,9 @@
     firebase.initializeApp(config);
     var database = firebase.database();
 </script>
-<script src="/public/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="/public/assets/js/main.js"></script>
-<script src="../node_modules/chart.js/dist/Chart.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
+        <script src="../node_modules/chart.js/dist/Chart.js"></script>
 <script>
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
@@ -127,5 +125,8 @@
     });
 </script>
 
+<script>
+    
+</script>
 
 </html>
