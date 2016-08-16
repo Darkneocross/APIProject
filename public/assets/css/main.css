@@ -1,46 +1,241 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
-	}
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display: block;
-	}
 
-	body {
-		line-height: 1;
-	}
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    //border: black solid 2px;
+}
+body {
+    background: #FFFFFF;
+    font: 14px/20px;
+    font-family: "Avenir Next";
+    margin: 0;
+    color: #000000;
+}
+#header {
+    height: 734px;
+    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 
-	ol, ul {
-		list-style: none;
-	}
+    
+}
+#logo {
+    padding: 22px 0px 0px 90px;
+}
+#header nav {
+    font-family: "EncodeSans-SemiBold";
+    float: right;
+    padding: 41px 90px 0px 0px;
+}
+#header nav li {
+    display: inline-block;
+    margin-left: 70px;
+    
+    
+}
+#header nav li a {
+    text-decoration: none;
+    color: #000000;
+}
+#header section {
+    width: 50%;
+    text-align: left;
 
-	blockquote, q {
-		quotes: none;
-	}
+}
+#header section h2 {
+    padding: 130px 0 0 130px;
+    font-size: 40pt;
+    font-weight: 700;
+}
+#header section p {
+    padding: 55px 0 80px 130px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+#header h1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    
+    left: 50%;
+    margin: 0 0 0 -0.75em;
+    position: absolute;
+}
+#dataStart {
+    color: #FFFFFF;
+    height: 734px;
+    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+   
+}
+#why {
+    height: 518px;
+    background-color: #19B5FE;
+}
+#why article {
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    padding-top: 68px;
+}
+#why aside {
+    float: right;
+     margin: 0 auto;
+    width: 49%;
+    height: auto;
+    color: #FFFFFF;
+}
+#why aside h2 {
+    padding: 43px 0px 25px 0;
+}
+#why aside h1 {
+    font-size: 32pt;
+    padding-bottom: 45px;
+    padding-left: 95px;
+}
+#why aside p {
+    font-size: 16pt;
+    padding-left: 95px;
+    color: #E1F5FF;
+}
+#why aside h1 span {
+    color:#000000;
+}
 
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
+#How {
+    height: 518px;
+    background-color: #FFFFFF;
+}
+#How article {
+    border: transparent solid 1px;
+    float: right;
+    margin: 0 auto;
+    width: 49%;
+    height: auto;
+    text-align: center;
+    padding: 45px 0 0 0;
+    
+}
+#How aside {
+    border: transparent solid 1px;
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    //border: black solid 2px;
 
-	table {
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
+}
+#How aside h2 {
+    padding: 45px 0 25px 83px;
+}
+#How aside h1{
+    padding:0 0 35px 155px;
+    font-size: 32pt;
+    
+}
+#How aside p {
+    padding-left: 155px;
+    font-size: 16pt;
+    font-weight: 500;
+}
+#Contact {
+    height: 518px;
+    background: url(../../pictures/background%20team.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#Contact h2{
 
-	body {
-		-webkit-text-size-adjust: none;
-	}
+    padding-top: 200px;
+    text-align: center;
+    font-weight: 500;    
+    font-size: 16pt;
+}
+#Contact p {
+    padding-top: 65px;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+#Contact p span {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: black solid 3px;
+    color: #000000;
+}
+#ContactTwo {
+    height: 222px;
+    background-color: #37474F;
+    color: #FFFFFF;
+}
+#ContactTwo h2 {
+    padding: 80px 0 60px 0;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 400;
+}
+#ContactTwo h2 a {
+    color: #FFFFFF;
+    font-weight:lighter;
+}
+#ContactTwo article {
+    float: left;
+    padding: 0 0 0 150px;
+    width: 50%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    
+}
+#ContactTwo article li {
+    display: inline-block;
+    margin-left: 20px;
+}
+#ContactTwo article li a {
 
-	*, *:before, *:after {
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
+    text-decoration: none;
+    color: #D3D7D8;
+}
+#ContactTwo aside {
+    padding: 0 150px 0 0;
+    float: right;
+    text-align: right;
+    width: 25%;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: #D3D7D8;
+    text-decoration: none;
+}
+#ContactTwo aside a {
+    color: #D3D7D8;
+}
+/*-------------MEDIA-----------*/
+
+@media screen and (max-width: 478px) {
+    body {
+        position: absolute;     
     }
+}
+@media screen and (max-width: 1160px) {
+    article {
+        width: 100%;
+    }
+    * {
+        font-size: 12pt;
+        color:blue;
+    }
+}
+
+/*------DON"T DElETE-----------*/
 
 .hideme {
     opacity: 0;
@@ -75,202 +270,3 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-ms-transition: none !important;
 			transition: none !important;
 }
-#team {
-
-    float: right;
-    background-color:transparent;
-    height:42px;
-    line-height: 42px;
-    width: 112px;
-    text-decoration: none;
-    color: black;
-    letter-spacing: 0em;
-    font-family: "EncodeSans-SemiBold";
-    font-size: 18pt;
-    position: relative;
-    
-}
-
-#team a {
-    text-decoration: none;
-    color:black;
-
-}
-
-#about {
-
-	float: right;
-    background-color:transparent;
-    height:42px;
-    line-height: 42px;
-    width: 112px;
-    text-decoration: none;
-    color: black;
-    letter-spacing: 0em;
-    font-family: "EncodeSans-SemiBold";
-    font-weight: bold;
-    position: relative; 
-    font-size: 18pt;
-}
-
-#about a {
-    text-decoration: none;
-    color:black;
-}
-
-#header {
-    padding: 24em 0 24em 0;
-    text-align: left;  
-    position: relative;
-    /* background-attachment: fixed,fixed,fixed; */
-    /*background-image:url(../../pictures/Header%20image.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/   
-}
-
-#header h3 {
-    float: left;
-    position: relative;
-    font-weight: bold;
-    font-size: 44pt;
-    font-family:"Avenir Next";
-    line-height: 64pt;
-    bottom: 2em;
-    right: 2.5em;
-}
-
-#header h2 {
-    float: left;
-    position: relative;
-    font-family: "EncodeSans-Bold";
-    font-size: 32pt;
-    bottom: 350px;
-}
-#header h1 {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 4em;
-    content: '';
-    display: block;
-    height: 1.5em;
-    left: 50%;
-    margin: 0 0 0 -0.75em;
-    position: absolute;
-    width: 1.5em;
-    
-}
-#dataStart {
-    position: relative;
-    text-align: center;
-    background-color: #253546;
-    padding: 24em 0 24em 0;
-     font-family:"Avenir Next";
-}
-#whyStart { 
-    position: relative;
-    background-color: #19B5FE;
-    padding: 24em 0 24em 0;
-}
-#whyStart h3 {
-
-    float: left;
-    position:relative;
-    bottom: 6.75em;
-    left: 12.5em;
-    z-index: 0
-}
-#whyStart h2 {
-
-    float: right;
-    position: relative;
-    right: 9.4em;
-    bottom: 6em;
-    text-align: left;
-    color: white;
-    font-size: 28pt;
-    font-weight: bold;
-    font-family:"Avenir Next";
-    z-index: 1;
-    
-}
-#whyStart h1 {
-    
-    
-    position: relative;
-    left: 2.15em;
-    bottom: 2em;
-    float:right;
-    text-align: left;
-    line-height: 60px;
-    color: white;
-    font-size: 36pt;
-    font-weight: bold;
-    font-family: "Avenir Next";
-    z-index: 1;
-} 
-#whyStart h1 span {
-    color:black;
-}
-#whyStart p {
-
-    position: relative;
-    right: 6.1em;
-    bottom: 1em;
-    text-align: left;
-    line-height: 45px;
-    float:right;
-    color: #C6EDFF;
-    font-size: 20pt;
-    font-weight: 500;
-    font-family:"Avenir Next";
-    z-index: 1;
-} 
-#How {
-    
-    position: relative;
-    background-color: white;
-    padding: 24em 0 24em 0; 
-    font-family:"Avenir Next";
-
-    
-}
-#How h3 {
-
-    position: relative;
-    bottom: 14em;
-    float: right;
-
-}
-#How h2 {
-
-    float: left;
-    position: relative;
-    left: 5.5em;
-    bottom: 7.5em;
-    font-weight: bold;
-    text-align: left;
-    font-size: 28pt;
-
-}
-#How p {
-
-    float: left;
-    position: relative;
-    right: 2em;
-    bottom: 5em;
-    font-size: 20pt;
-    font-weight: 500;
-    line-height: 45px;
-
-}
-#Contact {
-    position: relative;
-    background-color: darkgray;
-    padding: 15em 0 15em 0;
-    font-family:"Avenir Next";
-}
-
-
