@@ -109,11 +109,11 @@ var streetTwoNames = [
 ];
 var startAddress;
 var endAddress;
-
-function getLat(topStreet) {
+/*function getLat(topStreet) {
     for (var i = 0; i < streetOneNames.length; i++) {
-        if (topStreet === streetOneNames[i]) {
+        if (topStreet === streetOneNames[i]) { //if topStreet found, green light
             return i;
+            topS
         }
     }
     return -1;
@@ -121,13 +121,29 @@ function getLat(topStreet) {
 
 function getLong(botStreet) {
     for (var i = 0; i < streetTwoNames.length; i++) {
-        if (botStreet === streetTwoNames[i]) {
+        if (botStreet === streetTwoNames[i]) { //if botStreet found, green light
             return i;
         }
     }
     return -1;
+}*/
+function searchFunction() {
+    var topStreet;
+    var botStreet;
+    for (var i = 0; i < streetOneNames.length; i++) {
+        if (topStreet === streetOneNames[i]) { //if topStreet found, green light
+            topStreet = [latCoordinates[i], longCoordinates[i]]; 
+        }
+    }
+    for (var j = 0; j < streetTwoNames.length; j++) {
+        if (botStreet === streetTwoNames[i]) { //if botStreet found, green light
+            botStreet = [latCoordinates[i], longCoordinates[i]];
+        }
+    }
+    if(topStreet[0] != 'undefined' || topStreet[1] != 'undefined' || botSteet[0] != 'undefined' || botStreet[1] != 'undefined') { //checks if streets are valid
+        
+    }
 }
-
 google.maps.event.addDomListener(window, 'load', intilize);
     function intilize() {
         var autocomplete = new google.maps.places.Autocomplete(document.getElementById("txtautocomplete"));
