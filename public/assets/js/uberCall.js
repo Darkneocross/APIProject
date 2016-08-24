@@ -128,15 +128,18 @@ function getLong(botStreet) {
     return -1;
 }*/
 function searchFunction() {
+    var firstStreet = document.getElementById("firstStreet").value;
+    var secondStreet = document.getElementById("secondStreet").value;
+    console.log(firstStreet + " " + secondStreet);
     var topStreet;
     var botStreet;
     for (var i = 0; i < streetOneNames.length; i++) {
-        if (topStreet === streetOneNames[i]) { //if topStreet found, green light
+        if (firstStreet === streetOneNames[i]) { //if topStreet found, green light
             topStreet = [latCoordinates[i], longCoordinates[i]]; 
         }
     }
     for (var j = 0; j < streetTwoNames.length; j++) {
-        if (botStreet === streetTwoNames[i]) { //if botStreet found, green light
+        if (secondStreet === streetTwoNames[i]) { //if botStreet found, green light
             botStreet = [latCoordinates[i], longCoordinates[i]];
         }
     }
