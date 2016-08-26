@@ -110,7 +110,7 @@ var streetTwoNames = [
 var startAddress;
 var endAddress;
 
-function getLat(topStreet) {
+/*function getLat(topStreet) {
     for (var i = 0; i < streetOneNames.length; i++) {
         if (topStreet === streetOneNames[i]) {
             return i;
@@ -126,6 +126,26 @@ function getLong(botStreet) {
         }
     }
     return -1;
+}*/
+function searchFunction() {
+    var firstStreet = document.getElementById("firstStreet").value;
+    var secondStreet = document.getElementById("secondStreet").value;
+    console.log(firstStreet + " " + secondStreet);
+    var topStreet;
+    var botStreet;
+    for (var i = 0; i < streetOneNames.length; i++) {
+        if (firstStreet === streetOneNames[i]) { //if topStreet found, green light
+            topStreet = [latCoordinates[i], longCoordinates[i]]; 
+        }
+    }
+    for (var j = 0; j < streetTwoNames.length; j++) {
+        if (secondStreet === streetTwoNames[i]) { //if botStreet found, green light
+            botStreet = [latCoordinates[i], longCoordinates[i]];
+        }
+    }
+    if(topStreet[0] != 'undefined' || topStreet[1] != 'undefined' || botSteet[0] != 'undefined' || botStreet[1] != 'undefined') { //checks if streets are valid
+        
+    }
 }
 
 google.maps.event.addDomListener(window, 'load', intilize);
