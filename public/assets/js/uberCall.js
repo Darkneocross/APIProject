@@ -131,38 +131,27 @@ function searchFunction() {
     var firstStreet = document.getElementById("firstStreet").value;
     var secondStreet = document.getElementById("secondStreet").value;
     console.log(firstStreet + " " + secondStreet);
-    var topStreet;
-    var botStreet;
+    var topStreet = ["blank", "blank"];
+    var botStreet = ["blank", "blank"];
     for (var i = 0; i < streetOneNames.length; i++) {
-        if (firstStreet === streetOneNames[i]) { //if topStreet found, green light
-            topStreet = [latCoordinates[i], longCoordinates[i]]; 
+        if (firstStreet === streetOneNames[i] || firstStreet == streetTwoNames[i]) { //if topStreet found, green light
+            console.log("top");
+            topStreet[0] = latCoordinates[i];
+            topStreet[1] = longCoordinates[i];
+            console.log(topStreet[0]);
         }
     }
     for (var j = 0; j < streetTwoNames.length; j++) {
-        if (secondStreet === streetTwoNames[i]) { //if botStreet found, green light
-            botStreet = [latCoordinates[i], longCoordinates[i]];
+        if (secondStreet === streetTwoNames[i] || secondStreet == streetOneNames[i]) { //if botStreet found, green light
+            console.log("bot");
+            botStreet[0] = latCoordinates[i];
+            botStreet[1] = longCoordinates[i];
         }
     }
-    if(topStreet[0] != 'undefined' || topStreet[1] != 'undefined' || botSteet[0] != 'undefined' || botStreet[1] != 'undefined') { //checks if streets are valid
-        
+    if(topStreet[0] != "blank" && topStreet[1] != "blank" && botStreet[0] != "blank" && botStreet[1] != "blank") { //checks if streets are valid
+        console.log("test");
     }
 }
-
-google.maps.event.addDomListener(window, 'load', intilize);
-    function intilize() {
-        var autocomplete = new google.maps.places.Autocomplete(document.getElementById("txtautocomplete"));
-
-        google.maps.event.addListener(autocomplete, 'place_changed', function () {
-
-        var place = autocomplete.getPlace();
-        var location = new Array(3);
-        location[0] = place.formatted_address;
-        location[1] = place.geometry.location.lat();
-        location[2] = place.geometry.location.lng();
-        //document.getElementById('lblresult').innerHTML = location;
-        console.log(location);
-        });
-    };
 
 var startLatitude = "40.741549";
 var startLongitude = "-73.988991";
@@ -170,7 +159,7 @@ var endLatitude = "40.741549";
 var endLongitude = "-73.988991";
 var count = 0;
 var timer;
-var config = {
+/*var config = {
                 apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
                 , authDomain: "uberlytics-project.firebaseapp.com"
                 , databaseURL: "https://uberlytics-project.firebaseio.com"
@@ -178,7 +167,7 @@ var config = {
             , };
             firebase.initializeApp(config);
 
-
+*/
 $( document ).ready(function() {
     console.log( "ready!" );
     if (typeof timer === typeof undefined) {
