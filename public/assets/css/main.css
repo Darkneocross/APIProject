@@ -72,6 +72,10 @@ body {
     background-repeat: no-repeat;
    
 }
+#dataStart div {
+    height: 80%;
+    width: 80%;
+}
 #why {
     height: 518px;
     background-color: #19B5FE;
