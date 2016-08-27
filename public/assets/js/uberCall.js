@@ -141,19 +141,42 @@ function searchFunction() {
             }
         }
     }
+    var d = new Date();
+            var weekday = new Array(7);
+            weekday[0]=  "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            var n = weekday[d.getDay()];
+            var t = d.getHours();
+            var min = d.getMinutes();
+            var time;
+            if(min < 10) {
+                time = t + ':0' + min;
+            } else {
+                time = t + ':' + min;
+            }
     if(street[0] != "blank" && street[1] != "blank") {
-        console.log("test");
-        var ref = firebase.database().ref(n + '/' + time);
-                ref.once("value")
-                    .then(function(snapshot) {
-                        //var a = snapshot.child(test.prices[0].surge_multiplier);
-                        var a = snapshot.val();
-                        console.log(a);
-                        //console.log(a.Average.average);
-                        //var b = a.Counter.counter;
-                        //b = b + 1;
-                        //console.log(b);
+        if(street[0] != 0 && street[1] != 0) {
+            console.log("test");
+            console.log(n);
+            console.log(time);
+            var ref = firebase.database().ref(n + '/' + time);
+            ref.once("value")
+                .then(function(snapshot) {
+                    //var a = snapshot.child(test.prices[0].surge_multiplier);
+                    var a = snapshot.val();
+                    console.log(a.Average.average);
+                    //console.log(a.Average.average);
+                    //var b = a.Counter.counter;
+                    //b = b + 1;
+                    //console.log(b);
                 });
+        }
     }
     
 }
@@ -184,6 +207,7 @@ $( document ).ready(function() {
             for(var j = 0; j < streetTwoNames.length; j++) {
                 testLat = latCoordinates[i][j];
                 testLong = longCoordinates[i][j];
+                console.log(testLat + " " + testLong);
                 //getEstimatesForUserLocation(testLat, testLong);
             }
         }
@@ -271,7 +295,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
                     .then(function(snapshot) {
                         //var a = snapshot.child(test.prices[0].surge_multiplier);
                         var a = snapshot.val();
-                        //console.log(a.Average.average);
+                        console.log(a);
                         var b = a.Counter.counter;
                         b = b + 1;
                         console.log(b);
