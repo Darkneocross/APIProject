@@ -415,7 +415,7 @@ function getEstimatesForUserLocation(latitude, longitude, streetOne, streetTwo, 
     }
 }
 
-function graphCreator() {
+function chartCreator(dataVals) {
     
     $('#myChart').remove();
     $('#chartContainer').append('<canvas id="myChart"></canvas>');
