@@ -182,6 +182,7 @@ function getLong(botStreet) {
     return -1;
 }*/
 function searchFunction() {
+    var data = [];
     var firstStreet = document.getElementById("firstStreet").value;
     var secondStreet = document.getElementById("secondStreet").value;
     firstStreet = firstStreet.toUpperCase();
@@ -212,28 +213,50 @@ function searchFunction() {
     var t = d.getHours();
     var min = d.getMinutes();
     var time;
+    var ex;
     if (min < 10) {
         time = t + ':0' + min;
     }
     else {
         time = t + ':' + min;
     }
+    var t = new Date('2016/1/1 00:00:00');
     if (street[0] != "blank" && street[1] != "blank") {
         if (street[0] != 0 && street[1] != 0) {
             console.log("test");
             console.log(n);
             console.log(time);
-            var ref = firebase.database().ref(n + '/' + time);
+            for(var i = 0; i < 288; i++) {
+               // console.log(t.getHours() + " " + t.getMinutes());
+                ex = t.getHours();
+                if(t.getMinutes() < 10) {
+                    ex = ex + ':0' + t.getMinutes();
+                } else {
+                    ex = ex + ':' + t.getMinutes();
+                }
+                console.log(ex);
+            var ref = firebase.database().ref(firstStreet + '-' + secondStreet + '/' + n + '/' + ex);
             ref.once("value").then(function (snapshot) {
                 var a = snapshot.val();
                 console.log(a);
+                if(a != null) { 
+                    console.log(a.uberX);
+                    console.log(a.uberX.surgePrice);
+                    data.push(a.uberX.surgePrice);
                 //console.log(a.Average.average);
                 //var b = a.Counter.counter;
                 //b = b + 1;
                 //console.log(b);
+                } else {
+                    data.push(0);
+                }
             });
+                t = new Date(t.getTime() + 300000);
+            }
         }
     }
+    console.log(data);
+    chartCreator(data);
 }
 var testLat;
 var testLong;
@@ -444,7 +467,7 @@ function chartCreator(dataVals) {
     for (var i = 0; i < 288; i++) {
         xlabels.push(midnight.getTime() + 300000);
         midnight = new Date(midnight.getTime() + 300000);
-        dataSet.push(20);
+        //dataSet.push(20);
     }
     console.log(dataSet);
     console.log(xlabels);
@@ -467,7 +490,7 @@ function chartCreator(dataVals) {
                     {x: new Date({hour:02, minute:00}), y: 1.1},
                     {x: new Date({hour:02, minute:30}), y: 2.2},
                     {x: new Date({hour:03, minute:00}), y: 1.8}],*/
-                data: dataSet,
+                data: dataVals,
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: 'rgba(255, 255, 255, 0.2)',
