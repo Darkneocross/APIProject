@@ -68,44 +68,44 @@ var longCoordinates = [
 ];
 
 var streetOneNames = [
-    "31 street",
-    "32 street",
-    "33 street",
-    "34 street",
-    "35 street",
-    "36 street",
-    "37 street",
-    "38 street",
-    "39 street",
-    "40 street",
-    "41 street",
-    "42 street",
-    "43 street",
-    "44 street",
-    "45 street",
-    "46 street",
-    "47 street",
-    "48 street",
-    "49 street",
-    "50 street",
-    "51 street",
-    "52 street",
-    "53 street",
-    "54 street",
-    "55 street",
-    "56 street",
-    "57 street",
-    "ali way",
-    "broadway"
+    "31 STREET",
+    "32 STREET",
+    "33 STREET",
+    "34 STREET",
+    "35 STREET",
+    "36 STREET",
+    "37 STREET",
+    "38 STREET",
+    "39 STREET",
+    "40 STREET",
+    "41 STREET",
+    "42 STREET",
+    "43 STREET",
+    "44 STREET",
+    "45 STREET",
+    "46 STREET",
+    "47 STREET",
+    "48 STREET",
+    "49 STREET",
+    "50 STREET",
+    "51 STREET",
+    "52 STREET",
+    "53 STREET",
+    "54 STREET",
+    "55 STREET",
+    "56 STREET",
+    "57 STREET",
+    "ALI WAY",
+    "BROADWAY"
 ];
 
 var streetTwoNames = [
-    "5th",
-    "6th",
-    "7th",
-    "8th",
-    "9th",
-    "broadway"
+    "5TH",
+    "6TH",
+    "7TH",
+    "8TH",
+    "9TH",
+    "BROADWAY"
 ];
 var startAddress;
 var endAddress;
@@ -130,6 +130,10 @@ function getLong(botStreet) {
 function searchFunction() {
     var firstStreet = document.getElementById("firstStreet").value;
     var secondStreet = document.getElementById("secondStreet").value;
+    firstStreet = firstStreet.toUpperCase();
+    secondStreet = secondStreet.toUpperCase();
+    firstStreet = firstStreet.trim();
+    secondStreet = secondStreet.trim();
     console.log(firstStreet + " " + secondStreet);
     var street = ["blank", "blank"];
     for(var i = 0; i < streetOneNames.length; i++) {
@@ -168,9 +172,8 @@ function searchFunction() {
             var ref = firebase.database().ref(n + '/' + time);
             ref.once("value")
                 .then(function(snapshot) {
-                    //var a = snapshot.child(test.prices[0].surge_multiplier);
                     var a = snapshot.val();
-                    console.log(a.Average.average);
+                    console.log(a);
                     //console.log(a.Average.average);
                     //var b = a.Counter.counter;
                     //b = b + 1;
@@ -188,6 +191,9 @@ var endLatitude = "40.741549";
 var endLongitude = "-73.988991";
 var count = 0;
 var timer;
+var testStreetOne;
+var testStreetTwo;
+
 /*var config = {
                 apiKey: "AIzaSyCF5YfgPwzbEsqRYz0KkJ_S9zuso_1JBHI"
                 , authDomain: "uberlytics-project.firebaseapp.com"
@@ -199,26 +205,70 @@ var timer;
 */
 $( document ).ready(function() {
     console.log( "ready!" );
-    if (typeof timer === typeof undefined) {
+    /*if (typeof timer === typeof undefined) {
         timer = setInterval(function () {
             getEstimatesForUserLocation(startLatitude, startLongitude);
         }, 60000);
-        for(var i = 0; i < streetOneNames.length; i++) {
+    }*/
+        /*for(var i = 0; i < streetOneNames.length; i++) {
             for(var j = 0; j < streetTwoNames.length; j++) {
+                testStreetOne = streetOneNames[i];
+                testStreetTwo = streetTwoNames[j];
+                console.log(testStreetOne + " " + testStreetTwo);
                 testLat = latCoordinates[i][j];
-                testLong = longCoordinates[i][j];
-                console.log(testLat + " " + testLong);
+                testLong = longCoordinates[i][j];*/
+    
+    
+               
+                if (typeof timer === typeof undefined) {
+                    timer = setInterval(function () {
+                        var d = new Date();
+                        var weekday = new Array(7);
+                        weekday[0]=  "Sunday";
+                        weekday[1] = "Monday";
+                        weekday[2] = "Tuesday";
+                        weekday[3] = "Wednesday";
+                        weekday[4] = "Thursday";
+                        weekday[5] = "Friday";
+                        weekday[6] = "Saturday";
+
+                        var n = weekday[d.getDay()];
+                        var t = d.getHours();
+                        var min = d.getMinutes();
+                        var time;
+                        if(min < 10) {
+                            time = t + ':0' + min;
+                        } else {
+                            time = t + ':' + min;
+                        } 
+                        if(min % 5 == 0) { //checks to add function or not 
+                            for(var i = 0; i < streetOneNames.length; i++) {
+                                for(var j = 0; j < streetTwoNames.length; j++) {
+                                    testStreetOne = streetOneNames[i];
+                                    testStreetTwo = streetTwoNames[j];
+                                    console.log(testStreetOne + " " + testStreetTwo);
+                                    testLat = latCoordinates[i][j];
+                                    testLong = longCoordinates[i][j];
+                                    getEstimatesForUserLocation(testLat, testLong, testStreetOne, testStreetTwo, n, time);
+                                }
+                            }
+                        }
+                    }, 60000);
+                }
+            
+                //console.log(testLat + " " + testLong);
                 //getEstimatesForUserLocation(testLat, testLong);
-            }
-        }
-        getEstimatesForUserLocation(startLatitude, startLongitude);
-}
+            //});
+        
+        //getEstimatesForUserLocation(startLatitude, startLongitude);
+
 });
 
-function getEstimatesForUserLocation(latitude, longitude) {
+function getEstimatesForUserLocation(latitude, longitude, streetOne, streetTwo, n, time) {
+    if(latitude != 0 && longitude != 0) {
     $.ajax({
 
-        url: "https://api.uber.com/v1/estimates/price?start_latitude=" + startLatitude + "&start_longitude=" + startLongitude + "&end_latitude=" + endLatitude + "&end_longitude=" + endLongitude + "",
+        url: "https://api.uber.com/v1/estimates/price?start_latitude=" + latitude + "&start_longitude=" + longitude + "&end_latitude=" + latitude + "&end_longitude=" + longitude + "",
         //url: "https://api.uber.com/v1/estimates/price?start_latitude=40.741549&start_longitude=-73.988991&end_latitude=40.741549&end_longitude=-73.988991",
         // REMINDER:
         // Add in latitude and longitude of location to 
@@ -227,8 +277,8 @@ function getEstimatesForUserLocation(latitude, longitude) {
             'Authorization': serverTokenString
         },
         success: function (result) {
-            
-            var d = new Date();
+            count++;
+            /*var d = new Date();
             var weekday = new Array(7);
             weekday[0]=  "Sunday";
             weekday[1] = "Monday";
@@ -246,7 +296,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
                 time = t + ':0' + min;
             } else {
                 time = t + ':' + min;
-            }
+            }*/
             console.log(serverTokenString);
            // console.log(JSON.stringify(result, null, 2));
             var test = jQuery.parseJSON(JSON.stringify(result));
@@ -255,8 +305,9 @@ function getEstimatesForUserLocation(latitude, longitude) {
             var Fdatabase = firebase.database();
             //if(min % 5 == 0 ) {
                 //Adding Data
-            for(var i = 0; i < test.prices.length; i++) {    
-                Fdatabase.ref(n + '/' + time + '/' + test.prices[i].display_name).set({
+            for(var i = 0; i < test.prices.length; i++) {
+                console.log(streetOne + " " + streetTwo);
+                Fdatabase.ref(streetOne + '-' + streetTwo + '/' + n + '/' + time + '/' + test.prices[i].display_name).set({
                     surgePrice: test.prices[i].surge_multiplier
                 });
             }
@@ -281,10 +332,11 @@ function getEstimatesForUserLocation(latitude, longitude) {
                 Fdatabase.ref(n + '/' + time + '/' + test.prices[7].display_name).set({
                     surgePrice: test.prices[7].surge_multiplier
                 });
-                */
+                
                 Fdatabase.ref(n + '/' + time + '/Counter').set({
                     counter: count
                 });
+                */
                 Fdatabase.ref(n + '/' + time + '/Average').set({
                      average: "temp value for now"
                 });
@@ -295,7 +347,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
                     .then(function(snapshot) {
                         //var a = snapshot.child(test.prices[0].surge_multiplier);
                         var a = snapshot.val();
-                        console.log(a);
+                        //console.log(a);
                         var b = a.Counter.counter;
                         b = b + 1;
                         console.log(b);
@@ -321,6 +373,7 @@ function getEstimatesForUserLocation(latitude, longitude) {
             }*/
         }
     });
+}
 }
 /*function putDataInDataBase() {
     var config = {
