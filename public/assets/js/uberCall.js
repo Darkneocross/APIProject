@@ -414,7 +414,12 @@ function getEstimatesForUserLocation(latitude, longitude, streetOne, streetTwo, 
         });
     }
 }
+
 function graphCreator() {
+    
+    $('#myChart').remove();
+    $('#chartContainer').append('<canvas id="myChart"></canvas>');
+    
     var xlabels = [];
     var dataSet = [];
     var timeFormat = 'hh:mm A';
@@ -439,7 +444,7 @@ function graphCreator() {
     for (var i = 0; i < 288; i++) {
         xlabels.push(midnight.getTime() + 300000);
         midnight = new Date(midnight.getTime() + 300000);
-        dataSet.push(Math.floor(Math.random() * 100));
+        dataSet.push(20);
     }
     console.log(dataSet);
     console.log(xlabels);
@@ -490,10 +495,10 @@ function graphCreator() {
                         max: xlabels[xlabels.length-1],
                         //unit: 'hour',
                         //unitStepSize: 1,
-                        displayFormat: {
+                        /*displayFormat: {
                             'hour': 'hh:mm',
                             'minute': 'hh:mm'
-                        },
+                        },*/
                         //tooltipFormat: "HH:mm"
                     },
                     ticks: {

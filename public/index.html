@@ -37,13 +37,13 @@
                 <input type="text" name="firstStreet" id="firstStreet"><br>
                 Second Street:<br>
                 <input type="text" name="secondStreet" id="secondStreet"><br>
-                <button type="button" onclick="searchFunction()">Search!</button>
+                <button type="button" onclick="graphCreator()">Search!</button>
             </form>
-            <div>
+            <div id = "chartContainer">
                 <canvas id="myChart" width="20" height="20"></canvas>
             </div>
         </div>
-        <div class"clear"></div>
+        <div class="clear"></div>
             <div id ="why">
                 <article class ="module hideme"><img src = "pictures/picture%20of%20surge.png"></article>
                 <aside>
@@ -103,6 +103,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
+<script type="text/javascript" src="assets/js/uberCall.js">
+    //graphCreator();
+</script>
 <script>
     var xlabels = [];
     var dataSet = [];
@@ -128,7 +131,7 @@
     for (var i = 0; i < 288; i++) {
         xlabels.push(midnight.getTime() + 300000);
         midnight = new Date(midnight.getTime() + 300000);
-        dataSet.push(Math.floor(Math.random() * 100));
+        dataSet.push(0);
     }
     console.log(dataSet);
     console.log(xlabels);
