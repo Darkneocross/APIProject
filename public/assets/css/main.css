@@ -3,7 +3,6 @@
     margin: 0;
     border: 0;
     padding: 0;
-    //border: black solid 2px;
 }
 body {
     background: #FFFFFF;
@@ -14,9 +13,9 @@ body {
 }
 #header {
     height: 734px;
-    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 
     
 }
@@ -38,7 +37,24 @@ body {
     text-decoration: none;
     color: #000000;
 }
+#header nav li a:hover {
+    text-decoration:underline;
+}
+#menu-icon {
+    display: hidden;
+    width: 25px; 
+    height: 25px;
+    background: url("../../pictures/Fill%20102.png") center;
+    background-repeat: no-repeat;
+    
+}
+header nav a:hover#menu-icon {
+    border-radius: 5px 5px 0 0;
+    
+}
 #header section {
+    z-index: 1;
+    position: absolute;
     width: 50%;
     text-align: left;
 
@@ -59,10 +75,21 @@ body {
     background-size: contain;
     content: '';
     display: block;
-    
+    padding-top: 0px;
     left: 50%;
     margin: 0 0 0 -0.75em;
     position: absolute;
+}
+#header aside {
+    position: static;
+    z-index: 2;
+    overflow-x: hidden;
+}
+#header aside img {
+    overflow-x: hidden;
+    padding-left: 50%;
+    width: 1000px;
+    height: 600px;
 }
 #dataStart {
     color: #FFFFFF;
@@ -120,6 +147,7 @@ body {
     border: transparent solid 1px;
     float: right;
     margin: 0 auto;
+    overflow-x: hidden;
     width: 49%;
     height: auto;
     text-align: center;
@@ -150,12 +178,11 @@ body {
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/background%20team.png);
+    background: url(../../pictures/Peter%20last%20pic.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
 #Contact h2{
-
     padding-top: 200px;
     text-align: center;
     font-weight: 500;    
@@ -194,7 +221,7 @@ body {
 #ContactTwo article {
     float: left;
     padding: 0 0 0 150px;
-    width: 50%;
+    width: 40%;
     font-weight: lighter;
     font-size: 12pt;
     color: #D3D7D8;
@@ -213,7 +240,7 @@ body {
     padding: 0 150px 0 0;
     float: right;
     text-align: right;
-    width: 25%;
+    width: 15%;
     font-weight: lighter;
     font-size: 12pt;
     color: #D3D7D8;
@@ -224,17 +251,12 @@ body {
 }
 /*-------------MEDIA-----------*/
 
-@media screen and (max-width: 478px) {
-    body {
-        position: absolute;     
-    }
-}
+
 @media screen and (max-width: 1160px) {
     * {
     margin: 0;
     border: 0;
     padding: 0;
-    //border: black solid 2px;
 }
 body {
     background: #FFFFFF;
@@ -245,14 +267,15 @@ body {
 }
 #header {
     height: 734px;
-    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 
     
 }
 #logo {
     padding: 22px 0px 0px 90px;
+    width: 245px;
 }
 #header nav {
     font-family: "EncodeSans-SemiBold";
@@ -261,7 +284,7 @@ body {
 }
 #header nav li {
     display: inline-block;
-    margin-left: 70px;
+    margin-left: 43px;
     
     
 }
@@ -275,13 +298,13 @@ body {
 
 }
 #header section h2 {
-    padding: 130px 0 0 130px;
-    font-size: 40pt;
+    padding: 140px 0 0 130px;
+    font-size: 32pt;
     font-weight: 700;
 }
 #header section p {
     padding: 55px 0 80px 130px;
-    font-size: 16pt;
+    font-size: 12pt;
     font-weight: 600;
 }
 #header h1 {
@@ -290,10 +313,18 @@ body {
     background-size: contain;
     content: '';
     display: block;
-    
+    padding-top: 42px;
     left: 50%;
     margin: 0 0 0 -0.75em;
     position: absolute;
+}
+
+#header aside img {
+    overflow-x: hidden;
+    padding-left: 50%;
+    padding-top: 65px;
+    width: 750px;
+    height: 500px;
 }
 #dataStart {
     color: #FFFFFF;
@@ -377,7 +408,7 @@ body {
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/background%20team.png);
+    background: url(../../pictures/Peter%20last%20pic.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -420,7 +451,7 @@ body {
 }
 #ContactTwo article {
     float: left;
-    padding: 0 0 0 150px;
+    padding: 0 0 0 75px;
     width: 50%;
     font-weight: lighter;
     font-size: 12pt;
@@ -437,10 +468,10 @@ body {
     color: #D3D7D8;
 }
 #ContactTwo aside {
-    padding: 0 150px 0 0;
+    padding: 0 75px 0 0;
     float: right;
     text-align: right;
-    width: 25%;
+    width: 15%;
     font-weight: lighter;
     font-size: 12pt;
     color: #D3D7D8;
@@ -456,7 +487,7 @@ body {
     margin: 0;
     border: 0;
     padding: 0;
-    //border: black solid 2px;
+    overflow-x: hidden;
 }
 body {
     background: #FFFFFF;
@@ -467,56 +498,97 @@ body {
 }
 #header {
     height: 734px;
-    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 
     
 }
 #logo {
-    padding: 22px 0px 0px 90px;
+    padding: 22px 0px 0px 60px;
 }
-#header nav {
-    font-family: "EncodeSans-SemiBold";
-    float: right;
-    padding: 41px 90px 0px 0px;
-}
-#header nav li {
-    display: inline-block;
-    margin-left: 70px;
-    
-    
+
+
+#menu-icon {
+    display:inline-block;
 }
 #header nav li a {
     text-decoration: none;
-    color: #000000;
+    color: #D3D7D8;
+}
+#header nav li a:hover {
+    text-decoration:underline;
+}    
+#header nav ul, nav:active ul {
+        display: none;
+        position: absolute;
+        padding: 20px;
+        background: #312D34;
+        right: 0;
+        top: 0;
+        color: #D3D7D8;
+        width: 20%;
+        z-index: 100;
+        border-radius: 0 0 0 3px;
+}
+#header nav ul li {
+        color: #D3D7D8;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
+}
+#header nav:hover ul{
+    color: #D3D7D8;
+    display: block;
+}
+#header span {
+    font-size: 0;
 }
 #header section {
-    width: 50%;
-    text-align: left;
+    width: 100%;
+    text-align: center;
 
 }
 #header section h2 {
-    padding: 130px 0 0 130px;
-    font-size: 40pt;
+    padding-right: 100px;
+    padding-top: 50px;
+    font-size: 24pt;
     font-weight: 700;
 }
 #header section p {
-    padding: 55px 0 80px 130px;
-    font-size: 16pt;
+    padding-right: 100px;
+    font-size: 12pt;
     font-weight: 600;
 }
 #header h1 {
+    overflow-x: visible;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     content: '';
     display: block;
-    
+    bottom: 0px;
     left: 50%;
     margin: 0 0 0 -0.75em;
     position: absolute;
 }
+#header aside {
+     position: static;
+     text-align: center;
+     padding-right: 50px;
+     padding-top: 250px;
+    z-index: 2;
+     width: 100%;
+    overflow-x: hidden;
+}
+#header aside img {
+    overflow-x: hidden;
+    padding-left: 0%;
+    width: 100%;
+    width: 525px;
+    height: 350px;
+}   
 #dataStart {
     color: #FFFFFF;
     height: 734px;
@@ -535,7 +607,7 @@ body {
     width: 50%;
     height: auto;
     text-align: center;
-    padding-top: 68px;
+    padding-top: 80px;
 }
 #why aside {
     float: center;
@@ -566,8 +638,10 @@ body {
     background-color: #FFFFFF;
 }
 #How article {
-    border: transparent solid 1px;
+    
+    border: transparent solid 2px;
     float: right;
+    overflow-x: hidden;
     margin: 0 auto;
     width: 49%;
     height: auto;
@@ -578,42 +652,40 @@ body {
 #How aside {
     border: transparent solid 1px;
     float: left;
-    margin: 0 auto;
     width: 50%;
     height: auto;
     //border: black solid 2px;
 
 }
 #How aside h2 {
-    padding: 45px 0 25px 83px;
+    padding: 45px 0 25px 60px;
 }
 #How aside h1{
-    padding:0 0 35px 155px;
+    padding:0 0 35px 60px;
     font-size: 18pt;
     
 }
 #How aside p {
-    padding-left: 155px;
+    padding-left: 60px;
     font-size: 12pt;
     font-weight: 500;
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/background%20team.png);
+    background: url(../../pictures/Peter%20last%20pic.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
 #Contact h2{
-
     padding-top: 200px;
     text-align: center;
     font-weight: 500;    
-    font-size: 16pt;
+    font-size: 14pt;
 }
 #Contact p {
     padding-top: 65px;
     text-align: center;
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 400;
     text-decoration: none;
     
@@ -642,8 +714,8 @@ body {
 }
 #ContactTwo article {
     float: left;
-    padding: 0 0 0 150px;
-    width: 50%;
+    padding: 0 0 0 50px;
+    width: 60%;
     font-weight: lighter;
     font-size: 12pt;
     color: #D3D7D8;
@@ -651,7 +723,7 @@ body {
 }
 #ContactTwo article li {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 #ContactTwo article li a {
 
@@ -659,10 +731,10 @@ body {
     color: #D3D7D8;
 }
 #ContactTwo aside {
-    padding: 0 150px 0 0;
+    padding: 0 50px 0 0;
     float: right;
     text-align: right;
-    width: 25%;
+    width: 15%;
     font-weight: lighter;
     font-size: 12pt;
     color: #D3D7D8;
@@ -673,7 +745,7 @@ body {
 }
     
 }
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 768px) {
     * {
     margin: 0;
     border: 0;
@@ -689,19 +761,244 @@ body {
 }
 #header {
     height: 734px;
-    background: url(../../pictures/Rectangle%20236%20+%20Path%2028%20+%20model%20x%203.png);
+    background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 
     
 }
 #logo {
-    padding: 22px 0px 0px 90px;
+    padding: 20px 0px 0px 30px;
 }
 #header nav {
     font-family: "EncodeSans-SemiBold";
     float: right;
-    padding: 41px 90px 0px 0px;
+    padding: 30px 60px 0px 0px;
+}
+#header nav li {
+    display: inline-block;
+    margin-left: 70px;
+    
+}
+#header nav li a {
+    text-decoration: none;
+    color: #D3D7D8;
+}
+#header section {
+    width: 100%;
+
+}
+#header section h2 {
+    text-align: center;
+    left: 50%;
+    padding: 50px;
+    font-size: 20pt;
+    font-weight: 700;
+}
+#header section p {
+    left: 50%;
+    padding-left: 115px;
+    padding-top: 0;
+    font-size: 12pt;
+    font-weight: 600;
+}
+#header h1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    
+    left: 50%;
+    margin: 0 0 0 -0.75em;
+    position: absolute;
+}
+    
+#dataStart {
+    color: #FFFFFF;
+    height: 734px;
+    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+   
+}
+#why {
+    height: 1036px;
+    background-color: #19B5FE;
+}
+#why article {
+    float: center;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 68px;
+}
+#why aside {
+    text-align: center;
+    float: center;
+     margin: 0 auto;
+    width: 100%;
+    height: auto;
+    color: #FFFFFF;
+}
+#why aside h2 {
+    padding: 43px 0px 25px 0px;
+}
+#why aside h1 { ////////
+    font-size: 28pt;
+    padding-bottom: 45px;
+    padding-left: 0px;
+}
+#why aside p { ////////
+    font-size: 14pt;
+    padding-left: 0px;
+    color: #E1F5FF;
+}
+#why aside h1 span {
+    color:#000000;
+}
+
+#How {
+    height: 1036px;
+    background-color: #FFFFFF;
+}
+#How article {
+    border: transparent solid 1px;
+    float: right;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    height: auto;
+    text-align: center;
+    padding: 45px 0 0 0;
+    
+}
+#How aside {
+    text-align: center;
+    border: transparent solid 1px;
+    float: center;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    //border: black solid 2px;
+
+}
+#How aside h2 {
+    padding: 45px 0 25px 0px;
+}
+#How aside h1{
+    padding:0 0 35px 0px;
+    font-size: 28pt;
+    
+}
+#How aside p {
+    padding-left: 0px;
+    font-size: 14pt;
+    font-weight: 500;
+}
+#Contact {
+    height: 518px;
+    background: url(../../pictures/Peter%20last%20pic.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#Contact h2{
+
+    padding-top: 200px;
+    text-align: center;
+    font-weight: 500;    
+    font-size: 12pt;
+}
+#Contact p {
+    padding-top: 65px;
+    text-align: center;
+    font-size: 12pt;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+#Contact p span {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: black solid 3px;
+    color: #000000;
+}
+#ContactTwo {
+    height: 222px;
+    background-color: #37474F;
+    color: #FFFFFF;
+}
+#ContactTwo h2 {
+    padding: 111px 0 60px 0;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: 400;
+}
+#ContactTwo h2 a {
+    color: #FFFFFF;
+    font-weight:lighter;
+}
+#ContactTwo article {
+    float: left;
+    padding: 0 0 0 0px;
+    width: 50%;
+    font-weight: lighter;
+    font-size: 4pt;
+    color: #37474F;
+    
+}
+#ContactTwo article li {
+    display: inline-block;
+    margin-left: 0px;
+}
+#ContactTwo article li a {
+
+    text-decoration: none;
+    color: #37474F;
+}
+#ContactTwo aside {
+    padding: 0 150px 0 0;
+    float: right;
+    text-align: right;
+    width: 25%;
+    font-weight: lighter;
+    font-size: 4pt;
+    color: #37474F;
+    text-decoration: none;
+}
+#ContactTwo aside a {
+    color: #37474F;
+}
+ @media screen and (max-width: 478px) {
+   * {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+body {
+    background: #FFFFFF;
+    font: 14px/20px;
+    font-family: "Avenir Next";
+    margin: 0;
+    color: #000000;
+}
+#header {
+    height: 734px;
+    background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    
+}
+#logo {
+    padding: 22px 0px 0px 20px;
+}
+#header nav {
+    font-family: "EncodeSans-SemiBold";
+    float: right;
+    padding: 30px 45px 0px 0px;
 }
 #header nav li {
     display: inline-block;
@@ -711,21 +1008,23 @@ body {
 }
 #header nav li a {
     text-decoration: none;
-    color: #000000;
+    color: #D3D7D8;
 }
 #header section {
-    width: 50%;
-    text-align: left;
+    width: 100%;
 
 }
 #header section h2 {
-    padding: 130px 0 0 130px;
-    font-size: 40pt;
+    padding-left: 50px;
+    text-align: center;
+    font-size: 20pt;
     font-weight: 700;
 }
 #header section p {
-    padding: 55px 0 80px 130px;
-    font-size: 16pt;
+    
+    padding-left: 115px;
+    table-align: center;
+    font-size: 12pt;
     font-weight: 600;
 }
 #header h1 {
@@ -769,16 +1068,16 @@ body {
     color: #FFFFFF;
 }
 #why aside h2 {
-    padding: 43px 0px 25px 83px;
+    padding: 43px 0px 25px 0px;
 }
 #why aside h1 { ////////
     font-size: 28pt;
     padding-bottom: 45px;
-    padding-left: 183px;
+    padding-left: 0px;
 }
 #why aside p { ////////
     font-size: 14pt;
-    padding-left: 183px;
+    padding-left: 0px;
     color: #E1F5FF;
 }
 #why aside h1 span {
@@ -793,7 +1092,8 @@ body {
     border: transparent solid 1px;
     float: right;
     margin: 0 auto;
-    width: 100%;
+    width: 425px;
+    height: 425px;
     height: auto;
     text-align: center;
     padding: 45px 0 0 0;
@@ -809,21 +1109,21 @@ body {
 
 }
 #How aside h2 {
-    padding: 45px 0 25px 83px;
+    padding: 45px 0 25px 0px;
 }
 #How aside h1{
-    padding:0 0 35px 155px;
-    font-size: 28pt;
+    padding:0 0 35px 0px;
+    font-size: 24pt;
     
 }
 #How aside p {
-    padding-left: 155px;
-    font-size: 14pt;
+    padding-left: 0px;
+    font-size: 12pt;
     font-weight: 500;
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/background%20team.png);
+    background: url(../../pictures/Peter%20last%20pic.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -832,12 +1132,12 @@ body {
     padding-top: 200px;
     text-align: center;
     font-weight: 500;    
-    font-size: 16pt;
+    font-size: 12pt;
 }
 #Contact p {
     padding-top: 65px;
     text-align: center;
-    font-size: 16pt;
+    font-size: 12pt;
     font-weight: 400;
     text-decoration: none;
     
@@ -855,9 +1155,9 @@ body {
     color: #FFFFFF;
 }
 #ContactTwo h2 {
-    padding: 80px 0 60px 0;
+    padding: 111px 0 60px 0;
     text-align: center;
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 400;
 }
 #ContactTwo h2 a {
@@ -866,21 +1166,21 @@ body {
 }
 #ContactTwo article {
     float: left;
-    padding: 0 0 0 150px;
+    padding: 0 0 0 0px;
     width: 50%;
     font-weight: lighter;
-    font-size: 12pt;
-    color: #D3D7D8;
+    font-size: 4pt;
+    color: #37474F;
     
 }
 #ContactTwo article li {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 #ContactTwo article li a {
 
     text-decoration: none;
-    color: #D3D7D8;
+    color: #37474F;
 }
 #ContactTwo aside {
     padding: 0 150px 0 0;
@@ -888,20 +1188,28 @@ body {
     text-align: right;
     width: 25%;
     font-weight: lighter;
-    font-size: 12pt;
-    color: #D3D7D8;
+    font-size: 4pt;
+    color: #37474F;
     text-decoration: none;
 }
 #ContactTwo aside a {
-    color: #D3D7D8;
+    color: #37474F;
 }
-    
+   
+}   
 }
 
-/*------DON"T DElETE-----------*/
+/*------JQUERY-----------*/
 
 .hideme {
     opacity: 0;
+}
+.hidden-thing {
+  position: absolute;
+  left: 100%;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
 }
 .hidemetwo {
     opacity: 0;
