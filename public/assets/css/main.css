@@ -1,4 +1,13 @@
 
+@font-face {
+    font-family: 'Avenir Next';
+    src:url("http://www.yoursite.com/fonts/Avenir_Next.otf");
+}
+/*
+@font-face {
+    font-family:'EncodeSans-SemiBold';
+    src: url('');
+}*/
 * {
     margin: 0;
     border: 0;
@@ -7,7 +16,7 @@
 body {
     background: #FFFFFF;
     font: 14px/20px;
-    font-family: "Avenir Next";
+    font-family: "Open Sans";
     margin: 0;
     color: #000000;
 }
@@ -23,7 +32,8 @@ body {
     padding: 22px 0px 0px 90px;
 }
 #header nav {
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Open Sans";
+    font-weight: 900;
     float: right;
     padding: 41px 90px 0px 0px;
 }

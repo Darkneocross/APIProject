@@ -156,28 +156,28 @@
                     {x: new Date({hour:03, minute:00}), y: 1.8}],*/
                 data: dataSet,
                 fill: false,
-                lineTension: 0.1,
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                borderColor: 'rgba(255, 255, 255, 1)',
-                borderWidth: 5,
-                pointHoverRadius: 5,
-                pointRadius: 1,
-                pointHitRadius: 10,
+                lineTension: 0,
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                borderColor: 'rgba(255, 255, 255, 0)',
+                borderWidth: 0,
+                pointHoverRadius: 0,
+                pointRadius: 0,
+                pointHitRadius: 0,
             }]
         }, 
         options: {
             responsive: true,
             scaleShowVerticalLines: false,
             maintainAspectRatio: false,
-            tooltips: {
+            /*tooltips: {
                 mode: 'label'
-            },
+            },*/
             scales: {            
                 xAxes: [{
                     type: 'time',
                     time: {
                         format: timeFormat,
-                        tooltipFormat: 'll HH:mm',
+                        tooltipFormat: 'hh:mm',
                         min: xlabels[0],
                         max: xlabels[xlabels.length-1],
                         //unit: 'hour',
@@ -195,7 +195,7 @@
                         fontSize: 16
                     },
                     scaleLabel: {
-                        display: true,
+                        display: false,
                         labelString: 'Time'
                     },
                     gridLines: {
@@ -206,7 +206,7 @@
                 yAxes: [{
                     //labelFontSize: 16,
                     scaleLabel: {
-                        display: true,
+                        display: false,
                         labelString: 'value'
                     },
                     ticks: {

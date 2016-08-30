@@ -196,7 +196,7 @@ function searchFunction() {
             if (firstStreet == streetOneNames[i] && secondStreet == streetTwoNames[j]) {
                 street[0] = latCoordinates[i][j];
                 street[1] = longCoordinates[i][j];
-                console.log(street[0] + " " + street[1]);
+                //console.log(street[0] + " " + street[1]);
             }
         }
     }
@@ -223,9 +223,9 @@ function searchFunction() {
     var t = new Date('2016/1/1 00:00:00');
     if (street[0] != "blank" && street[1] != "blank") {
         if (street[0] != 0 && street[1] != 0) {
-            console.log("test");
-            console.log(n);
-            console.log(time);
+            //console.log("test");
+            //console.log(n);
+            //console.log(time);
             for(var i = 0; i < 288; i++) {
                // console.log(t.getHours() + " " + t.getMinutes());
                 ex = t.getHours();
@@ -238,11 +238,12 @@ function searchFunction() {
             var ref = firebase.database().ref(firstStreet + '-' + secondStreet + '/' + n + '/' + ex);
             ref.once("value").then(function (snapshot) {
                 var a = snapshot.val();
-                console.log(a);
+                //console.log(a);
                 if(a != null) { 
-                    console.log(a.uberX);
-                    console.log(a.uberX.surgePrice);
-                    data.push(a.uberX.surgePrice);
+                    //console.log(a.uberX);
+                    //console.log(a.uberX.surgePrice);
+                    var parseMan = Number(a.uberX.surgePrice);
+                    data.push(parseMan);
                 //console.log(a.Average.average);
                 //var b = a.Counter.counter;
                 //b = b + 1;
@@ -258,6 +259,7 @@ function searchFunction() {
     console.log(data);
     chartCreator(data);
 }
+
 var testLat;
 var testLong;
 var startLatitude = "40.741549";
@@ -415,7 +417,7 @@ function getEstimatesForUserLocation(latitude, longitude, streetOne, streetTwo, 
                     //console.log(a);
                     var b = a.Counter.counter;
                     b = b + 1;
-                    console.log(b);
+                    //console.log(b);
                 });
                 Fdatabase.ref(n + '/' + time + '/Counter').set({
                     counter: count
@@ -440,12 +442,19 @@ function getEstimatesForUserLocation(latitude, longitude, streetOne, streetTwo, 
 
 function chartCreator(dataVals) {
     
+    if (typeof dataVals[0] === 'number') {
+        console.log("aaaaaaaaaaaaaaaa");
+    }
+    else {
+        console.log(typeof dataVals[0]);
+    }
+    
     $('#myChart').remove();
-    $('#chartContainer').append('<canvas id="myChart"></canvas>');
+    $('#chartContainer').append('<canvas id="myChart" width="20" height="20"></canvas>');
     
     var xlabels = [];
     var dataSet = [];
-    var timeFormat = 'hh:mm A';
+    var timeFormat = 'hh:mm';
     
     var midnight = new Date('2016/1/1 00:00:00');
     var test = new Date();
@@ -460,17 +469,41 @@ function chartCreator(dataVals) {
     } else {
         time = hours + ':' + min;
     }
-    console.log(time); //jank way of doing time but oh well
+    //console.log(time); //jank way of doing time but oh well
     //var midnight = '00:00';
     //var d = new moment(midnight, 'hh:mm');
-    
+    console.log(midnight);
     for (var i = 0; i < 288; i++) {
-        xlabels.push(midnight.getTime() + 300000);
+        //xlabels.push(midnight.getTime() + 300000);
+        if (i % 36 === 0) {
+            var hours = midnight.getHours();
+            var min = midnight.getMinutes();
+            var time;
+            if(hours < 10) {
+                time = time + ':0';
+            }   
+            if(min < 10) {
+                time = hours + ':0' + min;
+            } else {
+                time = hours + ':' + min;
+            }
+            xlabels.push(time);
+        }
+        else {
+            xlabels.push("");
+        }
         midnight = new Date(midnight.getTime() + 300000);
-        //dataSet.push(20);
+        /*if (dataVals[i] === null){
+            dataSet.push(0);
+        }
+        else {
+            dataSet.push(dataVals[i]);
+        }*/
+        dataSet.push(Math.random() * Math.random() * 10);
     }
     console.log(dataSet);
     console.log(xlabels);
+    console.log(dataVals);
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
         type: 'line', 
@@ -492,13 +525,13 @@ function chartCreator(dataVals) {
                     {x: new Date({hour:03, minute:00}), y: 1.8}],*/
                 data: dataVals,
                 fill: false,
-                lineTension: 0.1,
+                lineTension: 0.5,
                 backgroundColor: 'rgba(255, 255, 255, 0.2)',
                 borderColor: 'rgba(255, 255, 255, 1)',
-                borderWidth: 5,
-                pointHoverRadius: 5,
+                borderWidth: 3,
+                pointHoverRadius: 1,
                 pointRadius: 1,
-                pointHitRadius: 10,
+                pointHitRadius: 1,
             }]
         }, 
         options: {
@@ -510,18 +543,18 @@ function chartCreator(dataVals) {
             },
             scales: {            
                 xAxes: [{
-                    type: 'time',
+                    //type: 'time',
                     time: {
                         format: timeFormat,
-                        tooltipFormat: 'll HH:mm',
+                        tooltipFormat: 'hh:mm',
                         min: xlabels[0],
                         max: xlabels[xlabels.length-1],
                         //unit: 'hour',
                         //unitStepSize: 1,
-                        /*displayFormat: {
-                            'hour': 'hh:mm',
-                            'minute': 'hh:mm'
-                        },*/
+                        //displayFormat: {
+                        //    'hour': 'hh:mm',
+                        //    'minute': 'hh:mm'
+                        //},
                         //tooltipFormat: "HH:mm"
                     },
                     ticks: {
@@ -530,10 +563,10 @@ function chartCreator(dataVals) {
                         fontColor: 'rgba(255, 255, 255, 1)',
                         fontSize: 16
                     },
-                    scaleLabel: {
+                    /*scaleLabel: {
                         display: true,
                         labelString: 'Time'
-                    },
+                    },*/
                     gridLines: {
                         color: '#757575',
                         display: false
@@ -547,8 +580,8 @@ function chartCreator(dataVals) {
                     },
                     ticks: {
                         min: 0,
-                        max: 100,
-                        stepSize: 10,
+                        suggestedMax: 2.0,
+                        stepSize: 0.5,
                         fontColor: 'rgba(255, 255, 255, 1)',
                         fontSize: 16
                     },
@@ -562,9 +595,11 @@ function chartCreator(dataVals) {
             },
             legend: {
                 display: false
-            }
+            },
+            showXLabels: 24
         },
     });
+    myChart.update();
 }
 /*function putDataInDataBase() {
     var config = {
