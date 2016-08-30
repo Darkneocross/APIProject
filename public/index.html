@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/css/main.css"/>
-        
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 </head>
     </head>
     <body>
@@ -31,19 +31,27 @@
             <h1 id ="nav" class = "hidemetwo"><a href ="#dataStart"><img src = "pictures/Fill%20454.png"></a></h1>
         </header>
         <div id = "dataStart">
-            <h2>Enter intersection for surge data</h2>
+            <h2>Enter intersections for the surge multiplier</h2>
             <form>
-                First Street:<br>
-                <input type="text" name="firstStreet" id="firstStreet"><br>
-                Second Street:<br>
-                <input type="text" name="secondStreet" id="secondStreet"><br>
-                <button type="button" onclick="searchFunction()">Search!</button>
+                <h1>
+                <input type="text" name="firstStreet" id="firstStreet" placeholder="1st Street.."></h1>
+                <h3><input type="text" name="secondStreet" id="secondStreet" placeholder = "2nd Street.."></h3>
+                <nav>
+                    <ul>
+                        <li><button type="button" onclick="searchFunction()">SUN</button></li>
+                        <li><button type="button" onclick="searchFunction()">MON</button></li>
+                        <li><button type="button" onclick="searchFunction()">TUES</button></li>
+                        <li><button type="button" onclick="searchFunction()">WED</button></li>
+                        <li><button type="button" onclick="searchFunction()">THURS</button></li>
+                        <li><button type="button" onclick="searchFunction()">FRI</button></li>
+                        <li><button type="button" onclick="searchFunction()">SAT</button></li>
+                    </ul>
+                </nav>
             </form>
             <div id = "chartContainer">
                 <canvas id="myChart" width="20" height="20"></canvas>
             </div>
         </div>
-        <div class="clear"></div>
             <div id ="why">
                 <article class ="module hideme"><img src = "pictures/picture%20of%20surge.png"></article>
                 <aside>
@@ -66,7 +74,7 @@
             <div id = "Contact">
                 <h2 class = "module hideme">We are a close team of dedicated developers based out of the Silicon <br>Valley. We are passionate about solving problems for people by providing <br>them with application they can use in their daily lives.</h2>
                 
-                <a href=""><p class = "module hideme"><span>Learn more about us</span></p></a>
+                <a href="team.html"><p class = "module hideme"><span>Learn more about us</span></p></a>
             </div>
             <footer id = "ContactTwo">
             <h2> Questions or comments? <a href ="mailto:uberlyticsoffical@gmail.com" target="_top">Let us know!</a></h2>

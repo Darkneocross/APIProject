@@ -1,13 +1,4 @@
 
-@font-face {
-    font-family: 'Avenir Next';
-    src:url("http://www.yoursite.com/fonts/Avenir_Next.otf");
-}
-/*
-@font-face {
-    font-family:'EncodeSans-SemiBold';
-    src: url('');
-}*/
 * {
     margin: 0;
     border: 0;
@@ -33,7 +24,6 @@ body {
 }
 #header nav {
     font-family: "Open Sans";
-    font-weight: 900;
     float: right;
     padding: 41px 90px 0px 0px;
 }
@@ -67,7 +57,6 @@ header nav a:hover#menu-icon {
     position: absolute;
     width: 50%;
     text-align: left;
-
 }
 #header section h2 {
     padding: 130px 0 0 130px;
@@ -103,16 +92,86 @@ header nav a:hover#menu-icon {
 }
 #dataStart {
     color: #FFFFFF;
-    height: 734px;
-    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
+    height: 984px;
+    background-color: #37474F;
    
 }
-#dataStart div {
-    height: 80%;
-    width: 80%;
+#dataStart h2 {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 40px;
 }
+input[type=text] {
+    width: 250px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    border-bottom: #FFFFFF solid 3px;
+    background-color: transparent; 
+    background-image: url(../../pictures/searchicon.png);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    outline: none;
+    color:#D3D7D8;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+#dataStart h1 {
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+}
+#dataStart h3 { 
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+input[type=text]:focus {
+    color:#D3D7D8;
+
+}
+#dataStart nav ul {
+    text-align: center;
+}
+#dataStart nav ul li {
+    display: inline-block;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 80px;
+}
+#dataStart nav ul li:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease;
+}
+#dataStart nav ul li:hover:after {
+    width: 100%;
+    background: #D3D7D8;
+}
+
+
+button[type=button] {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    margin: 4px 2px;
+    outline: none;
+    cursor: pointer;
+}
+#dataStart div {
+    margin: 0 auto;
+    height: 500px;
+    width: 70%;
+}
+
 #why {
     height: 518px;
     background-color: #19B5FE;
@@ -188,11 +247,11 @@ header nav a:hover#menu-icon {
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/Peter%20last%20pic.png);
+    background: url(../../pictures/2%20+%20Rectangle%2094.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
-#Contact h2{
+#Contact h2 {
     padding-top: 200px;
     text-align: center;
     font-weight: 500;    
@@ -271,7 +330,7 @@ header nav a:hover#menu-icon {
 body {
     background: #FFFFFF;
     font: 14px/20px;
-    font-family: "Avenir Next";
+    font-family: "Open Sans";
     margin: 0;
     color: #000000;
 }
@@ -288,7 +347,7 @@ body {
     width: 245px;
 }
 #header nav {
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Open Sans";
     float: right;
     padding: 41px 90px 0px 0px;
 }
@@ -338,12 +397,16 @@ body {
 }
 #dataStart {
     color: #FFFFFF;
-    height: 734px;
-    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-   
+    height: 984px;
+    background-color: #37474F;  
 }
+#dataStart nav ul li {
+    display: inline-block;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 80px;
+}
+
 #why {
     height: 518px;
     background-color: #19B5FE;
@@ -418,7 +481,7 @@ body {
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/Peter%20last%20pic.png);
+    background: url(../../pictures/2%20+%20Rectangle%2094.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -490,7 +553,7 @@ body {
 #ContactTwo aside a {
     color: #D3D7D8;
 }
-    
+
 }
 @media screen and (max-width: 910px) {
     * {
@@ -502,12 +565,12 @@ body {
 body {
     background: #FFFFFF;
     font: 14px/20px;
-    font-family: "Avenir Next";
+    font-family: "Open Sans";
     margin: 0;
     color: #000000;
 }
 #header {
-    height: 734px;
+    height: 750px;
     background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -591,8 +654,10 @@ body {
     z-index: 2;
      width: 100%;
     overflow-x: hidden;
+    overflow-y:hidden;
 }
 #header aside img {
+    overflow-y:hidden;
     overflow-x: hidden;
     padding-left: 0%;
     width: 100%;
@@ -601,23 +666,30 @@ body {
 }   
 #dataStart {
     color: #FFFFFF;
-    height: 734px;
-    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
+    height: 984px;
+    background-color: #37474F;
    
+}
+
+#dataStart div{
+    margin: 0 auto;
+    height: 400px;
+    width: 75%;
+
 }
 #why {
     height: 518px;
     background-color: #19B5FE;
 }
 #why article {
+    position: absolute;
+    overflow-y: hidden;
     float: left;
     margin: 0 auto;
     width: 50%;
     height: auto;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 68px;
 }
 #why aside {
     float: center;
@@ -682,7 +754,7 @@ body {
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/Peter%20last%20pic.png);
+    background: url(../../pictures/2%20+%20Rectangle%2094.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -765,12 +837,12 @@ body {
 body {
     background: #FFFFFF;
     font: 14px/20px;
-    font-family: "Avenir Next";
+    font-family: "Open Sans";
     margin: 0;
     color: #000000;
 }
 #header {
-    height: 734px;
+    height: 750px;
     background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -781,7 +853,7 @@ body {
     padding: 20px 0px 0px 30px;
 }
 #header nav {
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Open Sans";
     float: right;
     padding: 30px 60px 0px 0px;
 }
@@ -826,17 +898,30 @@ body {
     
 #dataStart {
     color: #FFFFFF;
-    height: 734px;
-    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
+    height: 984px;
+    background-color: #37474F;
    
 }
+#dataStart nav ul li {
+    display: inline-block;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-bottom: 80px;
+}   
+#dataStart nav ul li button {
+    font-size: 12pt;
+}
+#dataStart div {
+    margin: 0 auto;
+    height: 400px;
+    width: 80%;
+}    
 #why {
     height: 1036px;
     background-color: #19B5FE;
 }
 #why article {
+    position: relative;
     float: center;
     margin: 0 auto;
     width: 100%;
@@ -909,7 +994,7 @@ body {
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/Peter%20last%20pic.png);
+    background: url(../../pictures/2%20+%20Rectangle%2094.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -990,12 +1075,12 @@ body {
 body {
     background: #FFFFFF;
     font: 14px/20px;
-    font-family: "Avenir Next";
+    font-family: "Open Sans";
     margin: 0;
     color: #000000;
 }
 #header {
-    height: 734px;
+    height: 750px;
     background: url(../../pictures/Rectangle%20337%20+%20Path%2028.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1006,7 +1091,7 @@ body {
     padding: 22px 0px 0px 20px;
 }
 #header nav {
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Open Sans";
     float: right;
     padding: 30px 45px 0px 0px;
 }
@@ -1050,12 +1135,15 @@ body {
 }
 #dataStart {
     color: #FFFFFF;
-    height: 734px;
-    background: url(../../pictures/Rectangle%2042%20+%20Group.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-   
+    height: 834px;
+    background-color: #37474F;
 }
+     
+#dataStart div {
+    margin: 0 auto;
+    height: 300px;
+    width: 80%;
+}       
 #why {
     height: 1036px;
     background-color: #19B5FE;
@@ -1133,7 +1221,7 @@ body {
 }
 #Contact {
     height: 518px;
-    background: url(../../pictures/Peter%20last%20pic.png);
+    background: url(../../pictures/2%20+%20Rectangle%2094.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
